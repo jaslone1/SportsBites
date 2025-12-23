@@ -1,0 +1,62 @@
+@page "/events"
+@rendermode InteractiveServer
+
+@using GameDayParty.Shared
+@using GameDayParty.Client.Services
+@inject EventService EventService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Upcoming Game Day Parties</PageTitle>
+
+<h1>Upcoming Game Day Parties</h1>
+
+@if (events == null)
+{
+    <p><em>Loading events...</em></p>
+}
+else if (events.Count == 0)
+{
+    <p>No events found!</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Game Details</th>
+            <th>Date</th>
+            <th>Host</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var eventItem in events)
+        {
+            <tr>
+                <td>@eventItem.EventName</td>
+                <td>@eventItem.GameDetails</td>
+                <td>@eventItem.EventDate.ToShortDateString()</td>
+                <td>@eventItem.HostName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<EventDto>? events;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            events = await EventService.GetEventsAsync();
+        }
+        catch (HttpRequestException ex)
+        {
+            // If the API call fails (e.g., server not running, certificate error)
+            Console.WriteLine($"Error fetching events: {ex.Message}");
+            events = new List<EventDto>(); 
+        }
+    }
+}

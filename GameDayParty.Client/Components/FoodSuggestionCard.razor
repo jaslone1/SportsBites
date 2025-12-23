@@ -1,0 +1,97 @@
+@using GameDayParty.Shared
+
+<div class="list-group-item mb-2 shadow-sm rounded py-3">
+    
+    <div>
+        <h5>
+            @Suggestion.FoodName
+            @if (Suggestion.IsVegetarian)
+            {
+                <span class="badge bg-success ms-2">Veggie</span>
+            }
+        </h5>
+        <small class="text-muted">
+            Category: @Suggestion.FoodCategory | Suggested by: @Suggestion.SuggestedByName
+        </small>
+    </div>
+
+    <div class="d-flex align-items-center">
+        
+        <button class="btn @(Suggestion.HasUserUpvoted ? "btn-primary" : "btn-outline-primary") btn-sm me-2" 
+                @onclick="(() => HandleVote(true))">
+            👍 @Suggestion.UpvoteCount
+        </button>
+
+        <button class="btn @(Suggestion.HasUserDownvoted ? "btn-danger" : "btn-outline-danger") btn-sm"
+                @onclick="(() => HandleVote(false))">
+            👎 @Suggestion.DownvoteCount
+        </button>
+    </div>
+</div>
+
+
+@code {
+    // 1. Parameter: The data passed from the parent page
+    [Parameter]
+    public FoodSuggestionDto Suggestion { get; set; } = default!;
+
+    // 2. EventCallback: Notifies the parent page when the data changes
+    [Parameter]
+    public EventCallback<FoodSuggestionDto> OnVoteChanged { get; set; }
+
+    private async Task HandleVote(bool isUpvote)
+    {
+        // Prevent voting if the event is finalized (In a real app, the API would also enforce this)
+        // We'll rely on the parent page's IsFinalized status check for now.
+        
+        // --- Mock Logic to Simulate Vote Change ---
+        
+        if (isUpvote)
+        {
+            // If already upvoted, remove the vote (decrement count, reset flag)
+            if (Suggestion.HasUserUpvoted)
+            {
+                Suggestion.UpvoteCount--;
+                Suggestion.HasUserUpvoted = false;
+            }
+            // If downvoted, remove downvote and add upvote
+            else if (Suggestion.HasUserDownvoted)
+            {
+                Suggestion.DownvoteCount--;
+                Suggestion.UpvoteCount++;
+                Suggestion.HasUserDownvoted = false;
+                Suggestion.HasUserUpvoted = true;
+            }
+            // If new vote, just add upvote
+            else
+            {
+                Suggestion.UpvoteCount++;
+                Suggestion.HasUserUpvoted = true;
+            }
+        }
+        else // Downvote
+        {
+            // Similar logic for downvoting...
+            if (Suggestion.HasUserDownvoted)
+            {
+                Suggestion.DownvoteCount--;
+                Suggestion.HasUserDownvoted = false;
+            }
+            else if (Suggestion.HasUserUpvoted)
+            {
+                Suggestion.UpvoteCount--;
+                Suggestion.DownvoteCount++;
+                Suggestion.HasUserUpvoted = false;
+                Suggestion.HasUserDownvoted = true;
+            }
+            else
+            {
+                Suggestion.DownvoteCount++;
+                Suggestion.HasUserDownvoted = true;
+            }
+        }
+
+        // Notify the parent page (EventDetails.razor) that the suggestion object has changed.
+        await OnVoteChanged.InvokeAsync(Suggestion);
+    }
+}
