@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div *ngIf="event && event.eventName; else loading">
+    <h2 class="text-primary">{{ event.eventName }}</h2>
+    <p>{{ event.gameDetails }}</p>
+
+    <div class="list-group">
+      <div *ngFor="let food of event.foodSuggestions" class="list-group-item d-flex justify-content-between">
+        <span>{{ food.foodName }}</span>
+        <button (click)="onVote(food.foodSuggestionId)" class="btn btn-sm btn-success">
+          👍 {{ food.upvoteCount }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="text-center p-5">
+      <div class="spinner-border text-primary"></div>
+      <p class="mt-2">Connecting to Game Day API...</p>
+    </div>
+  </ng-template>
+</div>
