@@ -129,8 +129,9 @@ public class EventsController : ControllerBase
         _context.FoodSuggestions.Add(newFood);
         await _context.SaveChangesAsync();
 
-        return Ok();
+        return Ok(newFood);
     }
+    
     [HttpPost("food/{foodId}/upvote")]
     public async Task<IActionResult> UpvoteFood(int foodId, [FromQuery] string voterName)
     {

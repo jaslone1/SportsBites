@@ -23,3 +23,4 @@
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.pdb
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.genruntimeconfig.cache
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Shared/obj/Debug/net8.0/ref/GameDayParty.Shared.dll
+/home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.sourcelink.json

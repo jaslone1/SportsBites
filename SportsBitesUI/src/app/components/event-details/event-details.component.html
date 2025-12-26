@@ -1,22 +1,54 @@
-<div class="container mt-5">
-  <div *ngIf="event && event.eventName; else loading">
-    <h2 class="text-primary">{{ event.eventName }}</h2>
-    <p>{{ event.gameDetails }}</p>
+<div *ngIf="event; else loading" class="container mt-4">
+  <h2 class="text-primary">{{ event?.eventName }}</h2>
+  <p class="lead">{{ event?.gameDetails }}</p>
 
-    <div class="list-group">
-      <div *ngFor="let food of event.foodSuggestions" class="list-group-item d-flex justify-content-between">
-        <span>{{ food.foodName }}</span>
-        <button (click)="onVote(food.foodSuggestionId)" class="btn btn-sm btn-success">
-          👍 {{ food.upvoteCount }}
+  <h4>Food Suggestions</h4>
+  <div class="list-group shadow-sm">
+    <div *ngFor="let food of event?.foodSuggestions" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <h5 class="mb-1">{{ food?.foodName || 'Unnamed Dish' }}</h5>
+        <small class="text-muted">Suggested by: {{ food?.suggestedByName || 'Guest' }}</small>
+      </div>
+
+      <div class="text-end">
+                <span class="badge bg-info rounded-pill me-3">
+                    {{ food?.upvoteCount || 0 }} Votes
+                </span>
+        <button (click)="onVote(food.foodSuggestionId)" class="btn btn-outline-success">
+          👍 Vote
         </button>
       </div>
     </div>
   </div>
 
-  <ng-template #loading>
-    <div class="text-center p-5">
-      <div class="spinner-border text-primary"></div>
-      <p class="mt-2">Connecting to Game Day API...</p>
-    </div>
-  </ng-template>
 </div>
+
+<div *ngIf="event" class="card mt-4 shadow-sm">
+  <div class="card-header bg-success text-white">
+    <h4 class="mb-0">Add a Food Suggestion</h4>
+  </div>
+  <div class="card-body">
+    <div class="input-group">
+      <input
+        type="text"
+        [(ngModel)]="newFoodName"
+        class="form-control"
+        placeholder="What should people bring? (e.g., Buffalo Wings)"
+        (keyup.enter)="suggestFood()"> <button
+      class="btn btn-primary"
+      type="button"
+      (click)="suggestFood()"
+      [disabled]="!newFoodName.trim()">
+      Submit
+    </button>
+    </div>
+    <small class="text-muted mt-2 d-block">Suggesting as: <strong>{{voterName}}</strong></small>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="text-center mt-5">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="text-muted">Loading game day details...</p>
+  </div>
+</ng-template>

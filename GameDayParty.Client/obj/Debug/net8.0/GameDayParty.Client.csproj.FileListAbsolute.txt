@@ -1054,3 +1054,4 @@
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Client/obj/Debug/net8.0/compressed/j7pt9oqgvm.gz
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Client/obj/Debug/net8.0/compressed/99a63qb0t6.gz
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Client/obj/Debug/net8.0/compressed/zut9de47ww.gz
+/home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.sourcelink.json

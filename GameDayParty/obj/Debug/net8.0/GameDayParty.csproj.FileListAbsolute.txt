@@ -127,3 +127,4 @@
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.GameDayParty.props
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.GameDayParty.props
 /home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty/obj/Debug/net8.0/staticwebassets.pack.json
+/home/jaredslone/Desktop/SportsBites/GameDayParty/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json

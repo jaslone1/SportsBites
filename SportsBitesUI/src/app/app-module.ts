@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing-module';
 import { AppComponent } from './app';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { EventListComponent } from './components/event-list/event-list.component';
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { CreateEventComponent } from './components/create-event/create-event.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     EventDetailsComponent,
-    EventListComponent
+    EventListComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,6 @@ import { CommonModule} from '@angular/common';
     HttpClientModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule,
     CommonModule
   ],
   providers: [],

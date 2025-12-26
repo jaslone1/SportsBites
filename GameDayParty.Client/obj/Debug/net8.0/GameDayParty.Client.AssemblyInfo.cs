@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GameDayParty.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7034ebae82083cb744d2cb60c9cbf029ee1aee5b")]
 [assembly: System.Reflection.AssemblyProductAttribute("GameDayParty.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GameDayParty.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,13 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" routerLink="/events">SportsBites</a>
-    <div class="navbar-nav">
-      <a class="nav-link" routerLink="/events">All Events</a>
-      <a class="nav-link" routerLink="/event/new">Create Party</a>
-    </div>
+    <a class="navbar-brand" routerLink="/events">SportsBites 🏈</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/events">All Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/event/new">Create Event</a>
+      </li>
+    </ul>
   </div>
 </nav>
 
-<div class="container">
+<div class="container mt-4">
   <router-outlet></router-outlet>
 </div>
+
+<footer class="text-center mt-5 py-3 text-muted">
+  <p>&copy; 2025 SportsBites Game Day</p>
+</footer>

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GameDayParty.Client",
   "resources": {
-    "hash": "sha256-54rbwh34kMPRy8uCB8DNPje53MsI7mjDNzt2fxW04kg=",
+    "hash": "sha256-nUMfpF3RHip81CPdaQL+GwEp1JnrdX8FQb76MlRKlkE=",
     "jsModuleNative": {
       "dotnet.native.8.0.22.gb5m97c4lv.js": "sha256-vtotCeXt2UD6oc459laJT32vBgigZ+eLoUmdeFkvYDk="
     },
@@ -209,12 +209,12 @@
       "mscorlib.wasm": "sha256-K9gNrsN9UmPqLs6J/FrkiKpmkVGnHjjqUsc7YGvesCY=",
       "netstandard.wasm": "sha256-4emjlXLM9qW3t2tlII20SDylBgG4ueI0wy9nh5FMd8g=",
       "System.Private.CoreLib.wasm": "sha256-2DN4v7I/tabltDEPdIO8sDBB0tY8zOm+0CvHbMssXW4=",
-      "GameDayParty.Shared.wasm": "sha256-XIUtloqaGn0+oMxo2lfhAzgSVF/sCO7AUtBvyicojlI=",
-      "GameDayParty.Client.wasm": "sha256-gF0SQC22GnvtreSzxyQf0Gn8tdqjcYipqvEH9F1CoNg="
+      "GameDayParty.Shared.wasm": "sha256-algD30wyg0tLUT6bLa2MBSmrWiiP6InQOleNdkbumbc=",
+      "GameDayParty.Client.wasm": "sha256-bA+puk4eJRQXHqF+O0MQF1IdiHlXRcDWz9GODnkmk2o="
     },
     "pdb": {
-      "GameDayParty.Shared.pdb": "sha256-PyV7vvr95jltSUOxkgNT9/yxLuG06uFN3Fv7L7DZBY8=",
-      "GameDayParty.Client.pdb": "sha256-7c1bdvJdvoMMyuimpEeV7eW4+gQg57N8AGx51Dv2l14="
+      "GameDayParty.Shared.pdb": "sha256-OvPUCgBJSHF8OwWkpnoBzGV9NbP/z1KnyezWXyJvlVY=",
+      "GameDayParty.Client.pdb": "sha256-Kf/Q50bYsyMZ++Wu0pthIrkjSsBYnf7dcOnVL7PT140="
     }
   },
   "cacheBootResources": true,
