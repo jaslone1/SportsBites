@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic; // Needed for navigation properties
+using System.Collections.Generic; 
 
 namespace GameDayParty.Models
 
@@ -18,6 +18,5 @@ namespace GameDayParty.Models
         public string HostName { get; set; } = string.Empty;
         public bool IsFinalized { get; set; }
         public List<FoodSuggestion> FoodSuggestions { get; set; } = new();
-
     }
 }

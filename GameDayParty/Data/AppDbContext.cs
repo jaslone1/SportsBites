@@ -1,10 +1,12 @@
 using GameDayParty.Shared;
 using GameDayParty.Models;
 using Microsoft.EntityFrameworkCore; 
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GameDayParty.Data
 {
-    public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
@@ -18,6 +20,8 @@ namespace GameDayParty.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
+            base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<Event>()
                 .HasKey(e => e.EventId); 
     

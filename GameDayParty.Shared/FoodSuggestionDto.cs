@@ -23,5 +23,8 @@ namespace GameDayParty.Shared
         public bool HasUserUpvoted { get; set; } 
         public bool HasUserDownvoted { get; set; } 
         
+        //Claim Tracker
+        public string? ClaimedByName { get; set; }
+        
     }
 }

@@ -13,7 +13,7 @@ export class CreateEventComponent {
     eventName: '',
     eventDate: '',
     gameDetails: '',
-    hostName: 'Jared' // Defaulting to you!
+    hostName: ''
   };
 
   constructor(private eventService: EventService, private router: Router) {}

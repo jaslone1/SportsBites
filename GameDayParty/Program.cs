@@ -4,8 +4,12 @@ using GameDayParty.Components;
 using GameDayParty.Data;
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +20,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngular", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("http://localhost:4200", "https://your-frontend-url.vercel.app")
             .AllowAnyHeader()
-            .AllowAnyOrigin()
             .AllowAnyMethod();
     });
 });
@@ -45,6 +48,28 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(serverUr
 
 builder.Services.AddScoped<MockDataService>();
 
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddAuthentication(options => {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options => {
+        options.TokenValidationParameters = new TokenValidationParameters {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "YourApp",
+            ValidAudience = "YourApp",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKey123!_MustBe32CharsLong!!"))
+        };
+    });
+
 var app = builder.Build();
 
 // 5. Database Migration at Startup
@@ -65,11 +90,15 @@ else
     app.UseHsts();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
 
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseRouting();
 app.UseCors("AllowAngular");
-app.UseAntiforgery();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()

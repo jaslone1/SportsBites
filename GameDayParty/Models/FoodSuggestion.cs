@@ -14,7 +14,6 @@ namespace GameDayParty.Models
         public string FoodCategory { get; set; } = string.Empty;
         public bool IsVegetarian { get; set; }
         public int UpvoteCount { get; set; } = 0;
-
-
+        public string? ClaimedByName { get; set; }
     }
 }

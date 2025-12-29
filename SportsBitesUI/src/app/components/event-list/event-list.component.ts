@@ -4,10 +4,10 @@ import { EventDto } from '../../models/event';
 
 @Component({
   selector: 'app-event-list',
-  templateUrl: './event-list.component.html', // Fixed: was pointing to details
+  templateUrl: './event-list.component.html',
   standalone: false
 })
-export class EventListComponent implements OnInit { // Fixed: was EventDetailsComponent
+export class EventListComponent implements OnInit {
   upcomingEvents: any[] = [];
   pastEvents: any[] = [];
 

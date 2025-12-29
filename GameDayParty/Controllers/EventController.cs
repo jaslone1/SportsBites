@@ -5,6 +5,7 @@ using GameDayParty.Models;
 using GameDayParty.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore; 
+using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -44,8 +45,10 @@ public class EventsController : ControllerBase
 
     // GET: api/Events/#
     [HttpGet("{eventId}")]
-    public async Task<ActionResult<EventDto>> GetEvent(int eventId, [FromQuery] string? voterName = null)
+    public async Task<ActionResult<EventDto>> GetEvent(int eventId)
     {
+        var currentUserName = User.Identity?.Name;
+        
         var eventModel = await _context.Events
             .Include(e => e.FoodSuggestions) 
             .FirstOrDefaultAsync(e => e.EventId == eventId);
@@ -53,10 +56,10 @@ public class EventsController : ControllerBase
         if (eventModel == null) return NotFound();
         
         var userVotes = new List<int>();
-        if (!string.IsNullOrEmpty(voterName))
+        if (!string.IsNullOrEmpty(currentUserName))
         {
             userVotes = await _context.UserVotes
-                .Where(v => v.VoterName == voterName)
+                .Where(v => v.VoterName == currentUserName)
                 .Select(v => v.FoodSuggestionId)
                 .ToListAsync();
         }
@@ -80,7 +83,8 @@ public class EventsController : ControllerBase
                 FoodName = f.FoodName,
                 SuggestedByName = f.SuggestedByName,
                 UpvoteCount = f.UpvoteCount,
-                HasUserUpvoted = userVotes.Contains(f.FoodSuggestionId)
+                HasUserUpvoted = userVotes.Contains(f.FoodSuggestionId),
+                ClaimedByName = f.ClaimedByName
             }).ToList()
         };
 
@@ -113,16 +117,19 @@ public class EventsController : ControllerBase
         return CreatedAtAction(nameof(GetEvent), new { eventId = newEvent.EventId }, eventDto);
     }
     
+    [Authorize]
     [HttpPost("{eventId}/food")]
     public async Task<IActionResult> PostFood(int eventId, FoodSuggestionDto foodDto)
     {
         var eventModel = await _context.Events.FindAsync(eventId);
         if (eventModel == null) return NotFound();
+        
+        var currentUserName = User.Identity?.Name;
 
         var newFood = new FoodSuggestion
         {
             FoodName = foodDto.FoodName,
-            SuggestedByName = foodDto.SuggestedByName,
+            SuggestedByName = currentUserName ?? "Guest",
             EventId = eventId
         };
 
@@ -132,14 +139,15 @@ public class EventsController : ControllerBase
         return Ok(newFood);
     }
     
+    [Authorize]
     [HttpPost("food/{foodId}/upvote")]
-    public async Task<IActionResult> UpvoteFood(int foodId, [FromQuery] string voterName)
+    public async Task<IActionResult> UpvoteFood(int foodId)
     {
-        if (string.IsNullOrEmpty(voterName)) return BadRequest("Voter name is required.");
+        var currentUserName = User.Identity?.Name;
+        if (string.IsNullOrEmpty(currentUserName)) return Unauthorized();
         
-            // 1. Check if the vote already exists
         var existingVote = await _context.UserVotes
-            .FirstOrDefaultAsync(v => v.FoodSuggestionId == foodId && v.VoterName == voterName);
+            .FirstOrDefaultAsync(v => v.FoodSuggestionId == foodId && v.VoterName == currentUserName);
         
         var food = await _context.FoodSuggestions.FindAsync(foodId);
         if (food == null) return NotFound(); 
@@ -156,12 +164,41 @@ public class EventsController : ControllerBase
             _context.UserVotes.Add(new UserVote 
             { 
                 FoodSuggestionId = foodId, 
-                VoterName = voterName 
+                VoterName = currentUserName 
             });
             food.UpvoteCount++;
         }
 
         await _context.SaveChangesAsync();
         return Ok();
+    }
+    
+    public class ClaimDto {
+        public string ClaimedByName { get; set; }
+    }
+    
+    [HttpPut("food/{foodId}/claim")]
+    public async Task<IActionResult> ClaimFood(int foodId)
+    {
+        var food = await _context.FoodSuggestions.FindAsync(foodId);
+        if (food == null) return NotFound();
+
+        var currentUserName = User.Identity?.Name;
+        food.ClaimedByName = currentUserName;
+        
+        await _context.SaveChangesAsync();
+        return Ok(food);
+    }
+    
+    [Authorize]
+    [HttpPut("food/{foodId}/unclaim")]
+    public async Task<IActionResult> UnclaimFood(int foodId)
+    {
+        var food = await _context.FoodSuggestions.FindAsync(foodId);
+        if (food == null) return NotFound();
+
+        food.ClaimedByName = null; 
+        await _context.SaveChangesAsync();
+        return Ok(food);
     }
 }

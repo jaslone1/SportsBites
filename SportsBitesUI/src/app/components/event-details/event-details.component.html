@@ -6,16 +6,34 @@
   <div class="list-group shadow-sm">
     <div *ngFor="let food of event?.foodSuggestions" class="list-group-item d-flex justify-content-between align-items-center">
       <div>
-        <h5 class="mb-1">{{ food?.foodName || 'Unnamed Dish' }}</h5>
-        <small class="text-muted">Suggested by: {{ food?.suggestedByName || 'Guest' }}</small>
+        <h5 class="mb-1">{{ food.foodName }}</h5>
+        <small class="text-muted">Suggested by: {{ food.suggestedByName }}</small>
+
+        <div class="mt-1">
+            <span *ngIf="food.claimedByName" class="badge bg-success">
+                Coming from: {{ food.claimedByName }}
+            </span>
+          <span *ngIf="!food.claimedByName" class="badge bg-warning text-dark">
+                Needs someone to bring this!
+            </span>
+        </div>
       </div>
 
       <div class="text-end">
-                <span class="badge bg-info rounded-pill me-3">
-                    {{ food?.upvoteCount || 0 }} Votes
-                </span>
-        <button (click)="onVote(food.foodSuggestionId)" class="btn btn-outline-success">
-          👍 Vote
+        <button (click)="onVote(food.foodSuggestionId)" class="btn btn-sm btn-outline-info me-2">
+          👍 {{ food.upvoteCount }}
+        </button>
+
+        <button *ngIf="!food.claimedByName"
+                (click)="onClaim(food.foodSuggestionId)"
+                class="btn btn-sm btn-success">
+          I'll bring this!
+        </button>
+
+        <button *ngIf="food.claimedByName === currentUserName"
+                (click)="onUnclaim(food.foodSuggestionId)"
+                class="btn btn-sm btn-link text-danger">
+          Cancel
         </button>
       </div>
     </div>
@@ -42,7 +60,7 @@
       Submit
     </button>
     </div>
-    <small class="text-muted mt-2 d-block">Suggesting as: <strong>{{voterName}}</strong></small>
+    <small class="text-muted mt-2 d-block">Suggesting as: <strong>{{ currentUserName || 'Guest' }}</strong></small>
   </div>
 </div>
 
