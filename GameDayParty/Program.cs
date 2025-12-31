@@ -42,7 +42,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 // 4. Unified HttpClient & Service Registration
-var serverUrl = "http://localhost:5283"; 
+var serverUrl = builder.Configuration["ApiBaseUrl"] ?? "http://localhost:8080";
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(serverUrl) });
 
@@ -54,6 +54,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var jwtSecret = builder.Configuration["JWT_SECRET_KEY"] ?? "Development_Only_Key_Do_Not_Use_In_Production_123!";
 builder.Services.AddAuthentication(options => {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -66,7 +67,7 @@ builder.Services.AddAuthentication(options => {
             ValidateIssuerSigningKey = true,
             ValidIssuer = "YourApp",
             ValidAudience = "YourApp",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKey123!_MustBe32CharsLong!!"))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret))
         };
     });
 
@@ -93,13 +94,19 @@ else
 app.UseSwagger();
 app.UseSwaggerUI();
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
+app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseCors("AllowAngular");
+
+app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseAntiforgery();
+
 app.MapControllers();
+app.MapFallbackToFile("index.html");
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(GameDayParty.Client._Imports).Assembly);
