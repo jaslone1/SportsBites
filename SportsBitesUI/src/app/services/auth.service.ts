@@ -44,6 +44,38 @@ export class AuthService {
   }
 
   getCurrentUser(): string | null {
-    return localStorage.getItem('username');
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+
+      // Check the standard JWT claim locations for the username
+      return payload.unique_name ||
+        payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'] ||
+        localStorage.getItem('username'); // Fallback to your old method just in case
+    } catch (e) {
+      console.error("Error decoding token for username", e);
+      return null;
+    }
+  }
+
+  getUserId(): string | null {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      // A JWT token has 3 parts separated by dots. The 2nd part [1] is the data.
+      // atob decodes the Base64 string so we can read the JSON inside.
+      const payload = JSON.parse(atob(token.split('.')[1]));
+
+      // .NET usually stores the ID in one of these two keys:
+      return payload.nameid ||
+        payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'] ||
+        null;
+    } catch (e) {
+      console.error("Error decoding token", e);
+      return null;
+    }
   }
 }

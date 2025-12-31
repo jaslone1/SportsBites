@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { EventDto } from '../models/event';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -9,8 +8,10 @@ import { environment } from '../environments/environment';
 })
 export class EventService {
 
-  private apiUrl = `${environment.apiUrl}/events`;
+  private eventUrl = `${environment.apiUrl}/events`;
   private foodUrl = `${environment.apiUrl}/food`;
+
+  constructor(private http: HttpClient) {}
 
   // --- EVENT METHODS ---
   getEvents(): Observable<any[]> {
