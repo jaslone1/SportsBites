@@ -19,11 +19,14 @@ RUN dotnet restore "GameDayParty/GameDayParty.csproj"
 COPY . .
 RUN dotnet publish "GameDayParty/GameDayParty.csproj" -c Release -o /app/publish
 
+# remove after this
+RUN find ./wwwroot -name "index.html"
+
 # STAGE 3: Final Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=dotnet-build /app/publish .
-COPY --from=angular-build /app/dist/SportsBitesUI ./wwwroot
+COPY --from=angular-build /app/dist/SportsBitesUI/browser ./wwwroot
 
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
