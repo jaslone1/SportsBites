@@ -11,37 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Controllers/AuthContoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Controllers/AuthContoller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251217153223_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251217153223_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251217204125_AddUpvoteCount.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251217204125_AddUpvoteCount.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251217221210_AddUserVotesTable.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251217221210_AddUserVotesTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251229151409_AddClaimedBy.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251229151409_AddClaimedBy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251229165126_AddIdentitySupport.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251229165126_AddIdentitySupport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172211_InitailSupaBasePush.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172211_InitailSupaBasePush.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172459_FinalPushToSupabase.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172459_FinalPushToSupabase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/Dtos.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/UserVote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/UserVote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/app-module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/app-module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/register/register.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +165,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="85165000" />
+      <workItem from="1766513092725" duration="86330000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -325,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767190793298</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="updated Register backend and added to frontend">
+      <option name="closed" value="true" />
+      <created>1767196927618</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1767196927618</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +330,8 @@
     <MESSAGE value="updated hostuserId to not default to a string" />
     <MESSAGE value="updated angular event service url" />
     <MESSAGE value="Addint User Registration to backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addint User Registration to backend" />
+    <MESSAGE value="updated Register backend and added to frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated Register backend and added to frontend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
