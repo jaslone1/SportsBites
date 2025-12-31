@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { EventService } from '../../services/event.service';
 import { EventDto } from '../../models/event';
-
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',

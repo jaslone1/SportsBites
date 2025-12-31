@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/guards/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/guards/auth.guard.ts" afterDir="false" />
-    </list>
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,7 +162,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="92659000" />
+      <workItem from="1766513092725" duration="92969000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -366,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767206828642</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add ) to auth guard">
+      <option name="closed" value="true" />
+      <created>1767207265340</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1767207265340</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +382,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="food list and events list updates" />
     <MESSAGE value="finalized user auth" />
     <MESSAGE value="preparing for public push" />
     <MESSAGE value="preparing for final push" />
@@ -401,7 +406,8 @@
     <MESSAGE value="adding more unlogged in features" />
     <MESSAGE value="added login QoL" />
     <MESSAGE value="fixed auth.guard errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed auth.guard errors" />
+    <MESSAGE value="add ) to auth guard" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ) to auth guard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -422,6 +428,11 @@
           <url>file://$PROJECT_DIR$/SportsBitesUI/src/app/app-routing-module.ts</url>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.ts</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
