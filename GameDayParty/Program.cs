@@ -41,6 +41,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var jwtSecret = builder.Configuration["JWT_SECRET_KEY"] ?? "Development_Only_Key_Do_Not_Use_In_Production_123!";
+var jwtIssuer = builder.Configuration["JWT_ISSUER"] ?? "YourApp";
+var jwtAudience = builder.Configuration["JWT_AUDIENCE"] ?? "YourApp";
+
 builder.Services.AddAuthentication(options => {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -51,8 +54,8 @@ builder.Services.AddAuthentication(options => {
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = "YourApp",
-            ValidAudience = "YourApp",
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret))
         };
     });
