@@ -11,9 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Components/App.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Components/Pages/Error.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Components/_Imports.razor" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +164,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="75048000" />
+      <workItem from="1766513092725" duration="75698000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -246,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767150608276</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="moved Dtos out of .client folder and into models.cs">
+      <option name="closed" value="true" />
+      <created>1767151623832</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1767151623833</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +275,8 @@
     <MESSAGE value="remove/browser from dockerfile abgular filepath" />
     <MESSAGE value="last updates to remove blazor WebAssembly projest things" />
     <MESSAGE value="updated environmental vairable" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated environmental vairable" />
+    <MESSAGE value="moved Dtos out of .client folder and into models.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved Dtos out of .client folder and into models.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
