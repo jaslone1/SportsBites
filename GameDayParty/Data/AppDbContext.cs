@@ -1,4 +1,3 @@
-using GameDayParty.Shared;
 using GameDayParty.Models;
 using Microsoft.EntityFrameworkCore; 
 using Microsoft.AspNetCore.Identity;

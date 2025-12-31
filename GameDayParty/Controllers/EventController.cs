@@ -2,7 +2,6 @@
 
 using GameDayParty.Data;
 using GameDayParty.Models;
-using GameDayParty.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore; 
 using Microsoft.AspNetCore.Authorization;
