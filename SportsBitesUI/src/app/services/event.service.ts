@@ -10,34 +10,47 @@ import { environment } from '../environments/environment';
 export class EventService {
 
   private apiUrl = `${environment.apiUrl}/events`;
+  private foodUrl = `${environment.apiUrl}/food`;
 
-  constructor(private http: HttpClient) {}
-
-  getEvents(): Observable<EventDto[]> {
-    return this.http.get<EventDto[]>(this.apiUrl);
+  // --- EVENT METHODS ---
+  getEvents(): Observable<any[]> {
+    return this.http.get<any[]>(this.eventUrl);
   }
 
-  getEvent(id: number): Observable<EventDto> {
-    return this.http.get<EventDto>(`${this.apiUrl}/${id}`);
-  }
-
-  upvoteFood(foodId: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/food/${foodId}/upvote`, {});
-  }
-
-  addFoodSuggestion(eventId: number, suggestion: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${eventId}/food`, suggestion);
+  getEvent(id: number): Observable<any> {
+    return this.http.get<any>(`${this.eventUrl}/${id}`);
   }
 
   createEvent(newEvent: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, newEvent);
+    return this.http.post<any>(this.eventUrl, newEvent);
+  }
+
+  updateEvent(id: number, data: any): Observable<any> {
+    return this.http.put(`${this.eventUrl}/${id}`, data);
+  }
+
+  finalizeEvent(id: number): Observable<any> {
+    return this.http.patch(`${this.eventUrl}/${id}/finalize`, {});
+  }
+
+  deleteEvent(id: number): Observable<any> {
+    return this.http.delete(`${this.eventUrl}/${id}`);
+  }
+
+  // FOOD METHODS
+  addFoodSuggestion(eventId: number, suggestion: any): Observable<any> {
+    return this.http.post(`${this.foodUrl}/${eventId}`, suggestion);
+  }
+
+  upvoteFood(foodId: number): Observable<any> {
+    return this.http.post(`${this.foodUrl}/${foodId}/upvote`, {});
   }
 
   claimFood(foodId: number): Observable<any> {
-    return this.http.put(`${this.apiUrl}/food/${foodId}/claim`, {});
+    return this.http.put(`${this.foodUrl}/${foodId}/claim`, {});
   }
 
   unclaimFood(foodId: number): Observable<any> {
-    return this.http.put(`${this.apiUrl}/food/${foodId}/unclaim`, {});
+    return this.http.put(`${this.foodUrl}/${foodId}/unclaim`, {});
   }
 }

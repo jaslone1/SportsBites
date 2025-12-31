@@ -14,9 +14,11 @@ export class EventDetailsComponent implements OnInit {
   event: any = null;
   newFoodName = '';
   currentUserName: string | null = null;
+  currentUserId: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private eventService: EventService,
     private authService: AuthService,
     private cdr: ChangeDetectorRef
@@ -26,6 +28,8 @@ export class EventDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUserName = this.authService.getCurrentUser();
+    this.currentUserId = this.authService.getUserId();
+
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id && id !== '0') {
@@ -46,6 +50,13 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
+  onFinalize() {
+    if (!this.event) return;
+    this.eventService.finalizeEvent(this.event.eventId).subscribe({
+      next: () => this.loadEvent(this.event.eventId)
+    });
+  }
+
   onVote(foodId: number) {
     this.eventService.upvoteFood(foodId).subscribe(() => {
       if (this.event) {
@@ -54,13 +65,18 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-  suggestFood() {
-    if (!this.event || !this.newFoodName.trim()) return;
-    const suggestion = {
-      foodName: this.newFoodName
-    };
+  onDelete() {
+    if (!this.event) return;
+    if (confirm("Are you sure you want to cancel this Game Day party?")) {
+      this.eventService.deleteEvent(this.event.eventId).subscribe({
+        next: () => this.router.navigate(['/'])
+      });
+    }
+  }
 
-    this.eventService.addFoodSuggestion(this.event.eventId, suggestion).subscribe({
+  suggestFood() {
+    if (!this.event || !this.newFoodName.trim() || this.event.isFinalized) return;
+    this.eventService.addFoodSuggestion(this.event.eventId, { foodName: this.newFoodName }).subscribe({
       next: () => {
         this.newFoodName = '';
         this.loadEvent(this.event.eventId);
@@ -69,17 +85,10 @@ export class EventDetailsComponent implements OnInit {
   }
 
   onClaim(foodId: number) {
-    this.eventService.claimFood(foodId).subscribe({
-      next: () => {
-        this.loadEvent(this.event.eventId);
-      }
-    });
+    this.eventService.claimFood(foodId).subscribe(() => this.loadEvent(this.event.eventId));
   }
 
   onUnclaim(foodId: number) {
-    this.eventService.unclaimFood(foodId).subscribe({
-      next: () =>
-        this.loadEvent(this.event.eventId)
-    });
+    this.eventService.unclaimFood(foodId).subscribe(() => this.loadEvent(this.event.eventId));
   }
 }

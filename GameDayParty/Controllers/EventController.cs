@@ -118,85 +118,58 @@ public class EventsController : ControllerBase
         return CreatedAtAction(nameof(GetEvent), new { eventId = newEvent.EventId }, newEvent);
     }
     
+    // PUT
     [Authorize]
-    [HttpPost("{eventId}/food")]
-    public async Task<IActionResult> PostFood(int eventId, FoodSuggestionDto foodDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventUpdateDto model)
     {
-        var eventModel = await _context.Events.FindAsync(eventId);
+        var existingEvent = await _context.Events.FindAsync(id);
+        if (existingEvent == null) return NotFound();
+
+        // SECURITY: Ensure the person editing is the owner
+        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (existingEvent.HostUserId != currentUserId) return Forbid();
+
+        existingEvent.EventName = model.EventName;
+        existingEvent.GameDetails = model.GameDetails;
+        existingEvent.EventDate = DateTime.SpecifyKind(model.EventDate, DateTimeKind.Utc);
+
+        await _context.SaveChangesAsync();
+        return Ok(existingEvent);
+    }
+    
+    // DELETE
+    [HttpDelete("{id}")]
+    [Authorize]
+    public async Task<IActionResult> DeleteEvent(int id)
+    {
+        var eventModel = await _context.Events.FindAsync(id);
         if (eventModel == null) return NotFound();
-        
-        var currentUserName = User.Identity?.Name;
 
-        var newFood = new FoodSuggestion
-        {
-            FoodName = foodDto.FoodName,
-            SuggestedByName = currentUserName ?? "Guest",
-            EventId = eventId
-        };
+        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (eventModel.HostUserId != currentUserId) return Forbid();
 
-        _context.FoodSuggestions.Add(newFood);
+        _context.Events.Remove(eventModel);
         await _context.SaveChangesAsync();
-
-        return Ok(newFood);
+        return NoContent(); // 204 success
     }
     
+    // PATCH
+    [HttpPatch("{id}/finalize")]
     [Authorize]
-    [HttpPost("food/{foodId}/upvote")]
-    public async Task<IActionResult> UpvoteFood(int foodId)
+    public async Task<IActionResult> FinalizeEvent(int id)
     {
-        var currentUserName = User.Identity?.Name;
-        if (string.IsNullOrEmpty(currentUserName)) return Unauthorized();
-        
-        var existingVote = await _context.UserVotes
-            .FirstOrDefaultAsync(v => v.FoodSuggestionId == foodId && v.VoterName == currentUserName);
-        
-        var food = await _context.FoodSuggestions.FindAsync(foodId);
-        if (food == null) return NotFound(); 
-        
-        if (existingVote != null)
-        {
-            // 2. If they already voted, REMOVE it (Toggle off)
-            _context.UserVotes.Remove(existingVote);
-            food.UpvoteCount = Math.Max(0, food.UpvoteCount - 1);
-        }
-        else
-        {
-            // 3. If they haven't voted, ADD it (Toggle on)
-            _context.UserVotes.Add(new UserVote 
-            { 
-                FoodSuggestionId = foodId, 
-                VoterName = currentUserName 
-            });
-            food.UpvoteCount++;
-        }
+        var eventModel = await _context.Events.FindAsync(id);
+        if (eventModel == null) return NotFound();
 
-        await _context.SaveChangesAsync();
-        return Ok();
-    }
-    
-    
-    [HttpPut("food/{foodId}/claim")]
-    public async Task<IActionResult> ClaimFood(int foodId)
-    {
-        var food = await _context.FoodSuggestions.FindAsync(foodId);
-        if (food == null) return NotFound();
+        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (eventModel.HostUserId != currentUserId) return Forbid();
 
-        var currentUserName = User.Identity?.Name;
-        food.ClaimedByName = currentUserName;
-        
+        eventModel.IsFinalized = !eventModel.IsFinalized; // Toggle status
         await _context.SaveChangesAsync();
-        return Ok(food);
-    }
-    
-    [Authorize]
-    [HttpPut("food/{foodId}/unclaim")]
-    public async Task<IActionResult> UnclaimFood(int foodId)
-    {
-        var food = await _context.FoodSuggestions.FindAsync(foodId);
-        if (food == null) return NotFound();
-
-        food.ClaimedByName = null; 
-        await _context.SaveChangesAsync();
-        return Ok(food);
+        return Ok(new { isFinalized = eventModel.IsFinalized });
     }
 }
+    
+    
+    

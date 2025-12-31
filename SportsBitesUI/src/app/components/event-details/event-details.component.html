@@ -20,21 +20,21 @@
       </div>
 
       <div class="text-end">
-        <button (click)="onVote(food.foodSuggestionId)" class="btn btn-sm btn-outline-info me-2">
-          👍 {{ food.upvoteCount }}
+        <button *ngIf="!event.isFinalized" (click)="onVote(food.foodSuggestionId)" class="btn btn-sm">
+          <i [class]="food.hasUserUpvoted ? 'bi bi-heart-fill text-danger' : 'bi bi-heart'"></i>
         </button>
 
-        <button *ngIf="!food.claimedByName"
-                (click)="onClaim(food.foodSuggestionId)"
-                class="btn btn-sm btn-success">
-          I'll bring this!
+        <button *ngIf="!food.claimedByName" (click)="onClaim(food.foodSuggestionId)" class="btn btn-primary btn-sm">
+          Claim This!
         </button>
 
-        <button *ngIf="food.claimedByName === currentUserName"
-                (click)="onUnclaim(food.foodSuggestionId)"
-                class="btn btn-sm btn-link text-danger">
-          Cancel
+        <button *ngIf="food.claimedByName === currentUserName" (click)="onUnclaim(food.foodSuggestionId)" class="btn btn-danger btn-sm">
+          Unclaim
         </button>
+
+        <span *ngIf="food.claimedByName && food.claimedByName !== currentUserName" class="badge bg-secondary">
+          Claimed by {{ food.claimedByName }}
+        </span>
       </div>
     </div>
   </div>
@@ -62,6 +62,13 @@
     </div>
     <small class="text-muted mt-2 d-block">Suggesting as: <strong>{{ currentUserName || 'Guest' }}</strong></small>
   </div>
+</div>
+
+<div *ngIf="event && currentUserId === event.hostUserId" class="admin-tools mb-3">
+  <button (click)="onFinalize()" class="btn btn-warning">
+    {{ event.isFinalized ? '🔓 Re-open Suggestions' : '🔒 Finalize Menu (stop allowing suggestions)' }}
+  </button>
+  <button (click)="onDelete()" class="btn btn-danger ms-2">Delete Event</button>
 </div>
 
 <div><h3>Messages to be added later</h3></div>
