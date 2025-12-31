@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +11,12 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {
-  model: any = {};
+  loginData = {
+    email: '',
+    password: ''
+  };
   infoMessage: string | null = null;
+  errorMessage: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,16 +32,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.authService.login(this.model).subscribe({
+  onLogin() {
+    this.authService.login(this.loginData).subscribe({
       next: () => {
-        // After login, check if there is a returnUrl, otherwise go home
         const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
         this.router.navigateByUrl(returnUrl);
       },
       error: (err) => {
-        console.error(err);
-        this.infoMessage = "Invalid login attempt.";
+        this.errorMessage = "Invalid email or password.";
       }
     });
   }
