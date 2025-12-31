@@ -9,7 +9,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/Dtos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/Dtos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/RegisterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/RegisterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/BrowserDebugHost.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/BrowserDebugHost.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/BrowserDebugProxy.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.CodeAnalysis.CSharp.Scripting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.CodeAnalysis.Scripting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.CodeAnalysis.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.FileFormats.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.NET.WebAssembly.Webcil.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.SymbolStore.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/BlazorDebugProxy/Newtonsoft.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Client.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Client.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Client.staticwebassets.runtime.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Shared.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Shared.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Authorization.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Forms.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Web.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Components.WebAssembly.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Components.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Metadata.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.JSInterop.WebAssembly.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.JSInterop.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +207,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="76854000" />
+      <workItem from="1766513092725" duration="79301000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -273,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767152831162</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated angular event service url">
+      <option name="closed" value="true" />
+      <created>1767153316770</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1767153316770</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +354,8 @@
     <MESSAGE value="Added Dtos file that forgot last time." />
     <MESSAGE value="updated Dto data types" />
     <MESSAGE value="updated hostuserId to not default to a string" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated hostuserId to not default to a string" />
+    <MESSAGE value="updated angular event service url" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated angular event service url" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

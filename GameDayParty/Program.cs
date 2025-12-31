@@ -32,11 +32,10 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
     });
 
-// REMOVED: AddRazorComponents (Not needed for Angular)
 
 // 4. Identity & Auth
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>();
+    .AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
