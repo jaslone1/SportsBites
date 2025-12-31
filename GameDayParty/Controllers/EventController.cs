@@ -5,6 +5,7 @@ using GameDayParty.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore; 
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -91,17 +92,21 @@ public class EventsController : ControllerBase
     }
 
     // POST: api/Events
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> PostEvent(EventDto eventDto)
     {
+        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        
+        var currentUserName = User.Identity?.Name; 
         // 1. Convert DTO to Model
         var newEvent = new Event
         {
             EventName = eventDto.EventName,
             EventDate = DateTime.SpecifyKind(eventDto.EventDate, DateTimeKind.Utc),
             GameDetails = eventDto.GameDetails,
-            HostUserId = eventDto.HostUserId, 
-            HostName = eventDto.HostName,
+            HostUserId = userId,
+            HostName = currentUserName ?? eventDto.HostName,
             IsFinalized = false 
         };
 
@@ -109,11 +114,8 @@ public class EventsController : ControllerBase
         _context.Events.Add(newEvent);
         await _context.SaveChangesAsync();
         
-        //3. Map Id back to DTO for value
-        eventDto.EventId = newEvent.EventId;
-
-        // 4. Return a 201 Created status code
-        return CreatedAtAction(nameof(GetEvent), new { eventId = newEvent.EventId }, eventDto);
+        // 3. Return a 201 Created status code for new event
+        return CreatedAtAction(nameof(GetEvent), new { eventId = newEvent.EventId }, newEvent);
     }
     
     [Authorize]
@@ -172,9 +174,6 @@ public class EventsController : ControllerBase
         return Ok();
     }
     
-    public class ClaimDto {
-        public string ClaimedByName { get; set; }
-    }
     
     [HttpPut("food/{foodId}/claim")]
     public async Task<IActionResult> ClaimFood(int foodId)

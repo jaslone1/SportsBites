@@ -1,22 +1,14 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic; 
-
 namespace GameDayParty.Models
-
 {
-    public class Event
+    public class EventDto
     {
-        [Key]
         public int EventId { get; set; }
-        [Required]
-        [MaxLength(100)]
         public string EventName { get; set; } = string.Empty;
         public DateTime EventDate { get; set; }
         public string GameDetails { get; set; } = string.Empty;
-        public string? HostUserId { get; set; }
         public string HostName { get; set; } = string.Empty;
+        public string? HostUserId { get; set; }
         public bool IsFinalized { get; set; }
-        public List<FoodSuggestion> FoodSuggestions { get; set; } = new();
+        public List<FoodSuggestionDto> FoodSuggestions { get; set; } = new();
     }
 }

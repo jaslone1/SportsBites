@@ -7,8 +7,7 @@ namespace GameDayParty.Models
     {
         public int UserVoteId { get; set; }
         public int FoodSuggestionId { get; set; }
-        public string VoterName { get; set; } = string.Empty; // Temporary unique identifier
-
+        public string VoterName { get; set; } = string.Empty; 
         // Navigation property
         public FoodSuggestion FoodSuggestion { get; set; } = null!;
     }

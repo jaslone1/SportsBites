@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Create Account</h2>
+
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" name="email"
+                     [(ngModel)]="model.email" required #email="ngModel">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" name="password"
+                     [(ngModel)]="model.password" required minlength="6">
+              <small class="text-muted">Must include a number and special character.</small>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" name="confirmPassword"
+                     [(ngModel)]="model.confirmPassword" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100" [disabled]="!registerForm.form.valid">
+              Register
+            </button>
+          </form>
+
+          <div class="mt-3 text-center">
+            <p>Already have an account? <a routerLink="/login">Login here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

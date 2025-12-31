@@ -14,10 +14,12 @@ namespace GameDayParty.Controllers
     public class AuthController : ControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IConfiguration _configuration;
 
-        public AuthController(UserManager<IdentityUser> userManager)
+        public AuthController(UserManager<IdentityUser> userManager, IConfiguration configuration)
         {
             _userManager = userManager;
+            _configuration = configuration;
         }
 
         [HttpPost("register")]
@@ -40,14 +42,16 @@ namespace GameDayParty.Controllers
                 var authClaims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.UserName!),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
 
+                var secret = _configuration["JWT_SECRET_KEY"] ?? "YourSuperSecretKey123!_MustBe32CharsLong!!";
                 var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKey123!_MustBe32CharsLong!!"));
 
                 var token = new JwtSecurityToken(
-                    issuer: "YourApp",
-                    audience: "YourApp",
+                    issuer: _configuration["JWT_ISSUER"] ?? "YourApp",
+                    audience: _configuration["JWT_AUDIENCE"] ?? "YourApp",
                     expires: DateTime.Now.AddHours(3),
                     claims: authClaims,
                     signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
