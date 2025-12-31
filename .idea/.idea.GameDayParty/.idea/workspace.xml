@@ -10,9 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-list/event-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-list/event-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +164,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="89657000" />
+      <workItem from="1766513092725" duration="90150000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -337,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767199850110</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added details buttong ot home page">
+      <option name="closed" value="true" />
+      <created>1767203019650</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1767203019650</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +374,8 @@
     <MESSAGE value="added register button" />
     <MESSAGE value="updated authcontroller" />
     <MESSAGE value="updated more program.cs lines to match authcontorller" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated more program.cs lines to match authcontorller" />
+    <MESSAGE value="added details buttong ot home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added details buttong ot home page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

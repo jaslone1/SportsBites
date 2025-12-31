@@ -1,7 +1,8 @@
 <div class="container mt-4">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="text-primary">GameDay Tailgates</h2>
-    <a routerLink="/event/new" class="btn btn-success">+ Host a Party</a>
+    <a *ngIf="authService.isLoggedIn()" routerLink="/event/new" class="btn btn-success">+ Host a Party</a>
+    <div *ngIf="!authService.isLoggedIn()">Login to add a new party to the list</div>
   </div>
 
   <div class="container mt-4">
@@ -23,3 +24,4 @@
     </div>
   </div>
 </div>
+
