@@ -7,7 +7,7 @@ namespace GameDayParty.Models
         public DateTime EventDate { get; set; }
         public string GameDetails { get; set; } = string.Empty;
         public string HostName { get; set; } = string.Empty;
-        public string HostUserId { get; set; } = string.Empty;
+        public int HostUserId { get; set; } = string.Empty;
         public bool IsFinalized { get; set; }
         public List<FoodSuggestionDto> FoodSuggestions { get; set; } = new();
     }
