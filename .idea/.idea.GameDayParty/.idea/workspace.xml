@@ -162,7 +162,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="92969000" />
+      <workItem from="1766513092725" duration="93418000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -372,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767207265340</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add more imports">
+      <option name="closed" value="true" />
+      <created>1767207698734</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1767207698734</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +390,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="finalized user auth" />
     <MESSAGE value="preparing for public push" />
     <MESSAGE value="preparing for final push" />
     <MESSAGE value="Updated pathing at end of build" />
@@ -407,7 +414,8 @@
     <MESSAGE value="added login QoL" />
     <MESSAGE value="fixed auth.guard errors" />
     <MESSAGE value="add ) to auth guard" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ) to auth guard" />
+    <MESSAGE value="add more imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="add more imports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

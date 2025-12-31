@@ -12,7 +12,8 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private eventService: EventService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {
