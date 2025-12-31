@@ -16,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     EventDetailsComponent,
     EventListComponent,
     CreateEventComponent,
@@ -27,8 +28,7 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     FormsModule,
     RouterModule,
-    CommonModule,
-    LoginComponent
+    CommonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS,

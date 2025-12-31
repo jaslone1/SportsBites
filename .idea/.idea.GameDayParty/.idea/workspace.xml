@@ -10,69 +10,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Controllers/AuthContoller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229151409_AddClaimedBy.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229151409_AddClaimedBy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229165126_AddIdentitySupport.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229165126_AddIdentitySupport.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172211_InitailSupaBasePush.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172211_InitailSupaBasePush.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172459_FinalPushToSupabase.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172459_FinalPushToSupabase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Models/LoginDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/Models/RegisterDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.OpenApi.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/guards/auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/interceptors/auth.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Client.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/GameDayParty.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.pdb.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.pdb.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.wasm.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Client.wasm.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.pdb.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.pdb.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.wasm.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/GameDayParty.Shared.wasm.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/GameDayParty.Client.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/blazor.boot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/99a63qb0t6.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/99a63qb0t6.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/cacax8k92q.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/cacax8k92q.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/j7pt9oqgvm.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/j7pt9oqgvm.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/ro0ug0m9m2.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/ro0ug0m9m2.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/zut9de47ww.gz" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/compressed/zut9de47ww.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/ref/GameDayParty.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/ref/GameDayParty.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/refint/GameDayParty.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/refint/GameDayParty.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/tmp-webcil/GameDayParty.Client.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/tmp-webcil/GameDayParty.Client.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/tmp-webcil/GameDayParty.Shared.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/tmp-webcil/GameDayParty.Shared.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/webcil/GameDayParty.Client.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/webcil/GameDayParty.Client.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/webcil/GameDayParty.Shared.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Client/obj/Debug/net8.0/webcil/GameDayParty.Shared.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/bin/Debug/net8.0/GameDayParty.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/bin/Debug/net8.0/GameDayParty.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/bin/Debug/net8.0/GameDayParty.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/bin/Debug/net8.0/GameDayParty.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/GameDayParty.Shared.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/ref/GameDayParty.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/ref/GameDayParty.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/refint/GameDayParty.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty.Shared/obj/Debug/net8.0/refint/GameDayParty.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Client.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/services/event.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/services/event.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/app-module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/app-module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,18 +76,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "jaslone1"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jaslone1&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/jaslone1/SportsBites.git",
-    "accountId": "0e60deda-ee69-4319-a703-2298d772d996"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jaslone1/SportsBites.git&quot;,
+    &quot;accountId&quot;: &quot;0e60deda-ee69-4319-a703-2298d772d996&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GameDayParty.Client/Components/FoodSuggestionCard.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameDayParty.Client/Pages/EventDetails.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -130,32 +114,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.GameDayParty: http.executor": "Run",
-    ".NET Launch Settings Profile.GameDayParty: https.executor": "Run",
-    ".NET Project.GameDayParty.Client.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/jaredslone/Desktop/SportsBites/GameDayParty/obj",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
-    "ts.external.directory.path": "/home/jaredslone/Desktop/SportsBites/GameDayParty/SportsBitesUI/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.GameDayParty: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.GameDayParty: https.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.GameDayParty.Client.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jaredslone/Desktop/SportsBites/GameDayParty/obj&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/jaredslone/Desktop/SportsBites/GameDayParty/SportsBitesUI/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.GameDayParty: http">
     <configuration name="GameDayParty.Client" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -222,7 +206,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="66375000" />
+      <workItem from="1766513092725" duration="69287000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -240,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767048852503</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="preparing for public push">
+      <option name="closed" value="true" />
+      <created>1767141378581</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767141378581</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +245,8 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="food list and events list updates" />
     <MESSAGE value="finalized user auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalized user auth" />
+    <MESSAGE value="preparing for public push" />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing for public push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

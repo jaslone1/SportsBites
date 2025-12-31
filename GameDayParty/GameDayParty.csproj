@@ -24,4 +24,8 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="obj\Debug\net8.0\GameDayParty.MvcApplicationPartsAssemblyInfo.cs" />
+  </ItemGroup>
+
 </Project>
