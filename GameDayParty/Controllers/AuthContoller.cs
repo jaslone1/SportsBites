@@ -47,7 +47,7 @@ namespace GameDayParty.Controllers
                 };
 
                 var secret = _configuration["JWT_SECRET_KEY"] ?? "YourSuperSecretKey123!_MustBe32CharsLong!!";
-                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKey123!_MustBe32CharsLong!!"));
+                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
 
                 var token = new JwtSecurityToken(
                     issuer: _configuration["JWT_ISSUER"] ?? "YourApp",
