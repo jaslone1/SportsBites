@@ -94,7 +94,7 @@ else
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseRouting();
@@ -107,8 +107,9 @@ app.UseAntiforgery();
 
 app.MapControllers();
 app.MapFallbackToFile("index.html");
-app.MapRazorComponents<App>()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(GameDayParty.Client._Imports).Assembly);
+//The following was only necessary when building Razor Component Frontend
+//app.MapRazorComponents<App>()
+ //   .AddInteractiveWebAssemblyRenderMode()
+ //   .AddAdditionalAssemblies(typeof(GameDayParty.Client._Imports).Assembly);
 
 app.Run();
