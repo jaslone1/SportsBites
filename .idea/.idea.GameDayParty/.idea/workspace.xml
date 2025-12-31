@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/register/register.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,7 +162,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="86330000" />
+      <workItem from="1766513092725" duration="86652000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -303,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767196927618</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added in standalone line for register and added to imports">
+      <option name="closed" value="true" />
+      <created>1767197897344</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1767197897344</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +336,8 @@
     <MESSAGE value="updated angular event service url" />
     <MESSAGE value="Addint User Registration to backend" />
     <MESSAGE value="updated Register backend and added to frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated Register backend and added to frontend" />
+    <MESSAGE value="Added in standalone line for register and added to imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in standalone line for register and added to imports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -348,6 +354,11 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/SportsBitesUI/src/app/app-routing-module.ts</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
