@@ -1,9 +1,13 @@
-# STAGE 1: Build Angular
+# STAGE 1: Build Angular Frontend (SportsBitesUI)
 FROM node:20 AS angular-build
 WORKDIR /app
-COPY GameDayParty.Client/package*.json ./
+
+# Copy the package files from the correct folder
+COPY SportsBitesUI/package*.json ./
 RUN npm install
-COPY GameDayParty.Client/ ./
+
+# Copy the rest of the Angular source and build
+COPY SportsBitesUI/ ./
 RUN npm run build -- --configuration production
 
 # STAGE 2: Build .NET
