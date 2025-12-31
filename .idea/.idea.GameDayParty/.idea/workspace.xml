@@ -10,53 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Controllers/AuthContoller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229151409_AddClaimedBy.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229151409_AddClaimedBy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229165126_AddIdentitySupport.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251229165126_AddIdentitySupport.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172211_InitailSupaBasePush.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172211_InitailSupaBasePush.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172459_FinalPushToSupabase.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Migrations/20251230172459_FinalPushToSupabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Models/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/Models/RegisterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Microsoft.OpenApi.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/home-page/home-page.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/guards/auth.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/interceptors/auth.interceptor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/app-module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/app-module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -206,7 +161,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="69287000" />
+      <workItem from="1766513092725" duration="70128000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -232,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767141378581</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="preparing for final push">
+      <option name="closed" value="true" />
+      <created>1767145164504</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1767145164504</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +209,8 @@
     <MESSAGE value="food list and events list updates" />
     <MESSAGE value="finalized user auth" />
     <MESSAGE value="preparing for public push" />
-    <option name="LAST_COMMIT_MESSAGE" value="preparing for public push" />
+    <MESSAGE value="preparing for final push" />
+    <option name="LAST_COMMIT_MESSAGE" value="preparing for final push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -23,7 +23,7 @@ RUN dotnet publish "GameDayParty/GameDayParty.csproj" -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=dotnet-build /app/publish .
-COPY --from=angular-build /app/dist/game-day-party/browser ./wwwroot
+COPY --from=angular-build /app/dist/SportsBitesUI ./wwwroot
 
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
