@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Optional, but good for *ngIf etc.
-import { FormsModule } from '@angular/forms';   // <--- 1. ADD THIS IMPORT
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -10,21 +11,34 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html'
 })
 
-export class LoginComponent {
-  loginData = { email: '', password: '' };
-  errorMessage = '';
+export class LoginComponent implements OnInit {
+  model: any = {};
+  infoMessage: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
-  onLogin() {
-    this.authService.login(this.loginData).subscribe({
-      next: (response) => {
-        console.log('Login successful!', response);
-        this.router.navigate(['/events']); // Redirect to your main list
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params['message'] === 'login_required') {
+        this.infoMessage = "You need to be logged in to view event details or join a party!";
+      }
+    });
+  }
+
+  onSubmit() {
+    this.authService.login(this.model).subscribe({
+      next: () => {
+        // After login, check if there is a returnUrl, otherwise go home
+        const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        this.router.navigateByUrl(returnUrl);
       },
       error: (err) => {
-        this.errorMessage = 'Invalid email or password. Please try again.';
-        console.error('Login error:', err);
+        console.error(err);
+        this.infoMessage = "Invalid login attempt.";
       }
     });
   }

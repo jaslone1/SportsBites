@@ -1,7 +1,14 @@
 <div class="login-wrapper">
   <div class="login-card">
-    <h1>🏈 Sports Bites</h1>
+    <h1>Sports Bites</h1>
     <p>Sign in to claim your food!</p>
+
+    <div *ngIf="infoMessage" class="alert alert-info d-flex align-items-center mb-4 shadow-sm" role="alert">
+      <i class="bi bi-info-circle-fill me-2"></i>
+      <div>
+        {{ infoMessage }}
+      </div>
+    </div>
 
     <div *ngIf="errorMessage" class="error-box">
       {{ errorMessage }}
