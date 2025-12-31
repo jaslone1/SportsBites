@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/GameDayParty.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/GameDayParty.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +163,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="72755000" />
+      <workItem from="1766513092725" duration="73769000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -219,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767148644733</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="remove/browser from dockerfile abgular filepath">
+      <option name="closed" value="true" />
+      <created>1767149128969</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767149128969</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +247,8 @@
     <MESSAGE value="Updated pathing at end of build" />
     <MESSAGE value="Update program.cs to point to angular and not razor" />
     <MESSAGE value="one more update to program.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="one more update to program.cs" />
+    <MESSAGE value="remove/browser from dockerfile abgular filepath" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove/browser from dockerfile abgular filepath" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

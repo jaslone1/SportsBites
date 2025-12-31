@@ -23,7 +23,7 @@ COPY --from=dotnet-build /app/publish .
 
 # 2. Copy the Angular files into the wwwroot folder
 # Using the path confirmed by your logs: /app/dist/SportsBitesUI
-COPY --from=angular-build /app/dist/SportsBitesUI ./wwwroot
+COPY --from=angular-build /app/dist/SportsBitesUI/browser ./wwwroot
 
 # 3. DEBUG: This will now work because it's in the final stage
 RUN ls -R ./wwwroot
