@@ -20,21 +20,28 @@
       </div>
 
       <div class="text-end">
-        <button *ngIf="!event.isFinalized" (click)="onVote(food.foodSuggestionId)" class="btn btn-sm">
-          <i [class]="food.hasUserUpvoted ? 'bi bi-heart-fill text-danger' : 'bi bi-heart'"></i>
+        <button *ngIf="authService.isLoggedIn() && !event.isFinalized"
+                (click)="onVote(food.foodSuggestionId)">
+          <i [class]="food.hasUserUpvoted ? 'bi-heart-fill' : 'bi-heart'"></i>
         </button>
 
-        <button *ngIf="!food.claimedByName" (click)="onClaim(food.foodSuggestionId)" class="btn btn-primary btn-sm">
-          Claim This!
-        </button>
+        <ng-container *ngIf="authService.isLoggedIn(); else guestClaimView">
+          <button *ngIf="!food.claimedByName" (click)="onClaim(food.foodSuggestionId)">
+            Claim This!
+          </button>
+          <button *ngIf="food.claimedByName === currentUserName" (click)="onUnclaim(food.foodSuggestionId)">
+            Unclaim
+          </button>
+        </ng-container>
 
-        <button *ngIf="food.claimedByName === currentUserName" (click)="onUnclaim(food.foodSuggestionId)" class="btn btn-danger btn-sm">
-          Unclaim
-        </button>
-
-        <span *ngIf="food.claimedByName && food.claimedByName !== currentUserName" class="badge bg-secondary">
-          Claimed by {{ food.claimedByName }}
-        </span>
+        <ng-template #guestClaimView>
+          <span *ngIf="food.claimedByName" class="badge bg-secondary">
+            Brought by {{ food.claimedByName }}
+          </span>
+                <span *ngIf="!food.claimedByName" class="text-muted small">
+            (Login to claim)
+          </span>
+        </ng-template>
       </div>
     </div>
   </div>
@@ -45,22 +52,9 @@
   <div class="card-header bg-success text-white">
     <h4 class="mb-0">Add a Food Suggestion</h4>
   </div>
-  <div class="card-body">
-    <div class="input-group">
-      <input
-        type="text"
-        [(ngModel)]="newFoodName"
-        class="form-control"
-        placeholder="What should people bring? (e.g., Buffalo Wings)"
-        (keyup.enter)="suggestFood()"> <button
-      class="btn btn-primary"
-      type="button"
-      (click)="suggestFood()"
-      [disabled]="!newFoodName.trim()">
-      Submit
-    </button>
-    </div>
-    <small class="text-muted mt-2 d-block">Suggesting as: <strong>{{ currentUserName || 'Guest' }}</strong></small>
+  <div *ngIf="authService.isLoggedIn() && !event.isFinalized">
+    <input [(ngModel)]="newFoodName" placeholder="Suggest food...">
+    <button (click)="suggestFood()">Add</button>
   </div>
 </div>
 

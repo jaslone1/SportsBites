@@ -51,9 +51,11 @@ export class EventDetailsComponent implements OnInit {
   }
 
   onFinalize() {
-    if (!this.event) return;
     this.eventService.finalizeEvent(this.event.eventId).subscribe({
-      next: () => this.loadEvent(this.event.eventId)
+      next: () => {
+        this.loadEvent(this.event.eventId); // Refresh UI
+        console.log("Menu locked!");
+      }
     });
   }
 
@@ -88,7 +90,9 @@ export class EventDetailsComponent implements OnInit {
     this.eventService.claimFood(foodId).subscribe(() => this.loadEvent(this.event.eventId));
   }
 
-  onUnclaim(foodId: number) {
-    this.eventService.unclaimFood(foodId).subscribe(() => this.loadEvent(this.event.eventId));
+  onClaim(foodId: number) {
+    this.eventService.claimFood(foodId).subscribe({
+      next: () => this.loadEvent(this.event.eventId) // this will refresh UI
+    });
   }
 }
