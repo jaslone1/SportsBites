@@ -86,11 +86,7 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-  onClaim(foodId: number) {
-    this.eventService.claimFood(foodId).subscribe(() => this.loadEvent(this.event.eventId));
-  }
-
-  onClaim(foodId: number) {
+   onClaim(foodId: number) {
     this.eventService.claimFood(foodId).subscribe({
       next: () => this.loadEvent(this.event.eventId) // this will refresh UI
     });
