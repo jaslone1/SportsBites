@@ -24,10 +24,15 @@ public class EventsController : ControllerBase
 
     // GET: api/Events
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<EventDto>>> GetEvents()
     {
-        // Fetch all events from the database
+        // 1. Get the current user ID (will be null if they aren't logged in)
+        var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+        // 2. Filter: Show it if it's public OR if the user is the host
         var events = await _context.Events
+            .Where(e => e.IsPublic || e.HostUserId == currentUserId) 
             .Select(e => new EventDto
             {
                 EventId = e.EventId,
@@ -36,25 +41,34 @@ public class EventsController : ControllerBase
                 GameDetails = e.GameDetails,
                 HostName = e.HostName,
                 HostUserId = e.HostUserId,
-                IsFinalized = e.IsFinalized
+                IsFinalized = e.IsFinalized,
+                IsPublic = e.IsPublic 
             })
             .ToListAsync();
 
         return events;
     }
 
-    // GET: api/Events/#
     [HttpGet("{eventId}")]
+    [AllowAnonymous]
     public async Task<ActionResult<EventDto>> GetEvent(int eventId)
     {
         var currentUserName = User.Identity?.Name;
-        
+        var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
         var eventModel = await _context.Events
-            .Include(e => e.FoodSuggestions) 
+            .Include(e => e.FoodSuggestions)
             .FirstOrDefaultAsync(e => e.EventId == eventId);
 
         if (eventModel == null) return NotFound();
-        
+
+        // PRIVACY CHECK:
+        // If it's private and you aren't the host, return Forbid or NotFound
+        if (!eventModel.IsPublic && eventModel.HostUserId != currentUserId)
+        {
+            return Forbid(); 
+        }
+
         var userVotes = new List<int>();
         if (!string.IsNullOrEmpty(currentUserName))
         {
@@ -74,24 +88,24 @@ public class EventsController : ControllerBase
             HostName = eventModel.HostName,
             HostUserId = eventModel.HostUserId,
             IsFinalized = eventModel.IsFinalized,
+            IsPublic = eventModel.IsPublic, 
             FoodSuggestions = eventModel.FoodSuggestions
-                .OrderByDescending( f => f.UpvoteCount)
-                .ThenBy(f => f.FoodSuggestionId)
+                .OrderByDescending(f => f.UpvoteCount)
                 .Select(f => new FoodSuggestionDto
-            {
-                FoodSuggestionId = f.FoodSuggestionId,
-                FoodName = f.FoodName,
-                SuggestedByName = f.SuggestedByName,
-                UpvoteCount = f.UpvoteCount,
-                HasUserUpvoted = userVotes.Contains(f.FoodSuggestionId),
-                ClaimedByName = f.ClaimedByName
-            }).ToList()
+                {
+                    FoodSuggestionId = f.FoodSuggestionId,
+                    FoodName = f.FoodName,
+                    SuggestedByName = f.SuggestedByName,
+                    UpvoteCount = f.UpvoteCount,
+                    HasUserUpvoted = userVotes.Contains(f.FoodSuggestionId),
+                    ClaimedByName = f.ClaimedByName
+                }).ToList()
         };
 
         return eventDto;
     }
 
-    // POST: api/Events
+    // POST
     [Authorize]
     [HttpPost]
     public async Task<IActionResult> PostEvent(EventDto eventDto)

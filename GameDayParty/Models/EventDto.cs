@@ -9,6 +9,7 @@ namespace GameDayParty.Models
         public string HostName { get; set; } = string.Empty;
         public string? HostUserId { get; set; }
         public bool IsFinalized { get; set; }
+        public bool IsPublic { get; set; } = true;
         public List<FoodSuggestionDto> FoodSuggestions { get; set; } = new();
     }
 }
