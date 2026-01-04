@@ -20,7 +20,7 @@ export class EventDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private eventService: EventService,
-    private authService: AuthService,
+    public authService: AuthService,
     private cdr: ChangeDetectorRef
   ) {
     this.currentUserName = this.authService.getCurrentUser();
@@ -86,9 +86,16 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-   onClaim(foodId: number) {
+  onClaim(foodId: number) {
     this.eventService.claimFood(foodId).subscribe({
       next: () => this.loadEvent(this.event.eventId) // this will refresh UI
+    });
+  }
+
+  onUnclaim(foodId: number) {
+    this.eventService.unclaimFood(foodId).subscribe({
+      next: () => this.loadEvent(this.event.eventId),
+      error: (err) => console.error("Error unclaiming food:", err)
     });
   }
 }
