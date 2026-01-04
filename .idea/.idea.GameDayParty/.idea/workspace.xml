@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,7 +162,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="107947000" />
+      <workItem from="1766513092725" duration="108562000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -447,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767483574353</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="added uncliam back in">
+      <option name="closed" value="true" />
+      <created>1767484831874</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1767484831874</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +462,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="moved Dtos out of .client folder and into models.cs" />
     <MESSAGE value="Added Dtos file that forgot last time." />
     <MESSAGE value="updated Dto data types" />
     <MESSAGE value="updated hostuserId to not default to a string" />
@@ -482,7 +486,8 @@
     <MESSAGE value="addind in isPublic to data" />
     <MESSAGE value="patching html and github link" />
     <MESSAGE value="forgot to remove extra onClaim function" />
-    <option name="LAST_COMMIT_MESSAGE" value="forgot to remove extra onClaim function" />
+    <MESSAGE value="added uncliam back in" />
+    <option name="LAST_COMMIT_MESSAGE" value="added uncliam back in" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
