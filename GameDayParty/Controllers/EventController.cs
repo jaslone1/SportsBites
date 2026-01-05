@@ -11,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 [Authorize]
-[Route("api/[controller]")]
+[Route("api/events")]
 [ApiController]
 public class EventController : ControllerBase
 {
