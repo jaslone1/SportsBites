@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +174,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="121625000" />
+      <workItem from="1766513092725" duration="122879000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -516,7 +528,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767652863412</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="hopefully final spot that string update needed">
+      <option name="closed" value="true" />
+      <created>1767653531679</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1767653531679</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +546,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="updated authcontroller" />
     <MESSAGE value="updated more program.cs lines to match authcontorller" />
     <MESSAGE value="added details buttong ot home page" />
     <MESSAGE value="adding more unlogged in features" />
@@ -551,7 +570,8 @@
     <MESSAGE value="confirmed all UserIds are string to match UUIDs in database" />
     <MESSAGE value="more id updates to switch all to string" />
     <MESSAGE value="few more int/string IDs bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="few more int/string IDs bugs" />
+    <MESSAGE value="hopefully final spot that string update needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="hopefully final spot that string update needed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

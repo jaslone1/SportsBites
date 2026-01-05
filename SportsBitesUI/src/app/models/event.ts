@@ -2,8 +2,11 @@ export interface FoodSuggestionDto {
   foodSuggestionId: number;
   foodName: string;
   suggestedByName: string;
+  suggestedByUserId: string;
   upvoteCount: number;
   hasUserUpvoted: boolean;
+  claimedByName?: string;
+  claimedByUserId?: string;
 }
 
 export interface EventDto {
@@ -13,4 +16,5 @@ export interface EventDto {
   hostName: string;
   gameDetails: string;
   foodSuggestions: FoodSuggestionDto[];
+  HostUserId: string;
 }
