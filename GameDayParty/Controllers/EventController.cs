@@ -20,10 +20,9 @@ public class EventController : ControllerBase
     public EventController(AppDbContext context) => _context = context;
 
     // HELPER: Safely gets ID from Token as an Int
-    private int GetUserId()
+    private string GetUserId()
     {
-        var idString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        return int.TryParse(idString, out int id) ? id : 0;
+        return User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
     }
 
     [HttpGet]
@@ -42,7 +41,7 @@ public class EventController : ControllerBase
                 EventDate = e.EventDate,
                 GameDetails = e.GameDetails,
                 HostName = e.HostName,
-                HostUserId = e.HostUserId, // Now an int
+                HostUserId = e.HostUserId, 
                 IsFinalized = e.IsFinalized,
                 IsPublic = e.IsPublic 
             })
@@ -69,12 +68,11 @@ public class EventController : ControllerBase
             return Forbid(); 
         }
 
-        // VOTING CHECK: Use VoterId (int) instead of name
         var userVotes = new List<int>();
-        if (currentUserId > 0)
+        if (!string.IsNullOrEmpty(currentUserId))
         {
             userVotes = await _context.UserVotes
-                .Where(v => v.VoterId == currentUserId)
+                .Where(v => v.VoterId == currentUserId) // VoterId must be string in DB
                 .Select(v => v.FoodSuggestionId)
                 .ToListAsync();
         }
@@ -96,11 +94,11 @@ public class EventController : ControllerBase
                     FoodSuggestionId = f.FoodSuggestionId,
                     FoodName = f.FoodName,
                     SuggestedByName = f.SuggestedByName,
-                    SuggestedByUserId = f.SuggestedByUserId, // Added for frontend edit checks
+                    SuggestedByUserId = f.SuggestedByUserId, 
                     UpvoteCount = f.UpvoteCount,
                     HasUserUpvoted = userVotes.Contains(f.FoodSuggestionId),
                     ClaimedByName = f.ClaimedByName,
-                    ClaimedByUserId = f.ClaimedByUserId // Added for frontend unclaim checks
+                    ClaimedByUserId = f.ClaimedByUserId 
                 }).ToList()
         };
 
@@ -117,7 +115,7 @@ public class EventController : ControllerBase
             EventName = eventDto.EventName,
             EventDate = DateTime.SpecifyKind(eventDto.EventDate, DateTimeKind.Utc),
             GameDetails = eventDto.GameDetails,
-            HostUserId = currentUserId, // int matches int
+            HostUserId = currentUserId, 
             HostName = User.Identity?.Name ?? "Host",
             IsPublic = eventDto.IsPublic,
             IsFinalized = false 

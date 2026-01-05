@@ -6,7 +6,8 @@ namespace GameDayParty.Models
     {
         [Key]
         public int FoodSuggestionId { get; set; }
-        public string SuggestedByUserId { get; set; }
+
+        public string SuggestedByUserId { get; set; } = string.Empty;
         public int EventId { get; set; }
         [Required]
         public string FoodName { get; set; } = string.Empty;

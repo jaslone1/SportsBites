@@ -11,11 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Controllers/FoodController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Controllers/FoodController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameDayParty/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/Event.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameDayParty/Models/EventDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/EventDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestion.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestionDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +170,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="118392000" />
+      <workItem from="1766513092725" duration="119612000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -499,7 +500,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767649066195</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="confirmed all UserIds are string to match UUIDs in database">
+      <option name="closed" value="true" />
+      <created>1767650499080</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1767650499080</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +518,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="updated Register backend and added to frontend" />
     <MESSAGE value="Added in standalone line for register and added to imports" />
     <MESSAGE value="added register button" />
     <MESSAGE value="updated authcontroller" />
@@ -534,7 +542,8 @@
     <MESSAGE value="fixed few bugs causing deploy erros" />
     <MESSAGE value="fixed event patch URL" />
     <MESSAGE value="update routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="update routes" />
+    <MESSAGE value="confirmed all UserIds are string to match UUIDs in database" />
+    <option name="LAST_COMMIT_MESSAGE" value="confirmed all UserIds are string to match UUIDs in database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

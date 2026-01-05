@@ -18,6 +18,11 @@ public class FoodController : ControllerBase
     private readonly AppDbContext _context;
 
     public FoodController(AppDbContext context) => _context = context;
+    
+    private string GetUserId()
+    {
+        return User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+    }
 
     [HttpPost("{eventId}")]
     public async Task<IActionResult> PostFood(int eventId, FoodSuggestionDto foodDto) 
@@ -25,7 +30,7 @@ public class FoodController : ControllerBase
         var eventModel = await _context.Events.FindAsync(eventId);
         if (eventModel == null) return NotFound();
         
-        var currentUserId = GetUserId(); // Now an int
+        var currentUserId = GetUserId();
         var currentUserName = User.Identity?.Name;
 
         var newFood = new FoodSuggestion
@@ -143,10 +148,4 @@ public class FoodController : ControllerBase
         return NoContent();
     }
     
-    // Helper method to get the User ID as an integer
-    private int GetUserId()
-    {
-        var idString = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-        return int.TryParse(idString, out int id) ? id : 0;
-    }
 }
