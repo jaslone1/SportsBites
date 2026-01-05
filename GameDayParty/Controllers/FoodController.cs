@@ -122,7 +122,7 @@ public class FoodController : ControllerBase
         var currentUserId = GetUserId();
     
         bool isSuggester = food.SuggestedByUserId == currentUserId;
-        bool isHost = (food.Event?.HostUserId ?? 0) == currentUserId;
+        bool isHost = (food.Event?.HostUserId ?? string.Empty) == currentUserId;
         
         //Suggester OR Event Host can delete
         if (!isSuggester && !isHost) 
