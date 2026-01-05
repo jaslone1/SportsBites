@@ -56,7 +56,7 @@ export class EventService {
   }
 
   updateFoodName(foodId: number, newName: string): Observable<any> {
-     return this.http.patch(`${this.apiUrl}/Food/${foodId}/name`, JSON.stringify(newName), {
+     return this.http.patch(`${this.foodUrl}/${foodId}/name`, JSON.stringify(newName), {
       headers: { 'Content-Type': 'application/json' }
     });
   }
