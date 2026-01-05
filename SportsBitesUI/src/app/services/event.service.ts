@@ -54,4 +54,10 @@ export class EventService {
   unclaimFood(foodId: number): Observable<any> {
     return this.http.put(`${this.foodUrl}/${foodId}/unclaim`, {});
   }
+
+  updateFoodName(foodId: number, newName: string): Observable<any> {
+     return this.http.patch(`${this.apiUrl}/Food/${foodId}/name`, JSON.stringify(newName), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 }

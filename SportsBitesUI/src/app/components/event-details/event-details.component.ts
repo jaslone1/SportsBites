@@ -101,11 +101,6 @@ export class EventDetailsComponent implements OnInit {
       error: (err) => console.error("Error unclaiming food:", err)
     });
   }
-
-  isEditingEvent = false;
-  editingFoodId: number | null = null;
-  tempEditValue = '';
-
 // Edit Event
   onSaveEvent() {
     this.eventService.updateEvent(this.event.eventId, this.event).subscribe({
@@ -120,11 +115,13 @@ export class EventDetailsComponent implements OnInit {
   }
 
   saveFoodEdit(foodId: number) {
+    if (!this.tempEditValue.trim()) return;
     this.eventService.updateFoodName(foodId, this.tempEditValue).subscribe({
       next: () => {
         this.editingFoodId = null;
         this.loadEvent(this.event.eventId);
-      }
+      },
+      error: (err) => console.error("Error updating food:", err)
     });
   }
 }
