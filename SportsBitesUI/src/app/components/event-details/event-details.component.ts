@@ -14,7 +14,11 @@ export class EventDetailsComponent implements OnInit {
   event: any = null;
   newFoodName = '';
   currentUserName: string | null = null;
-  currentUserId: string | null = null;
+  currentUserId: number | null = null;
+
+  isEditingEvent = false;
+  editingFoodId: number | null = null;
+  tempEditValue = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -22,13 +26,12 @@ export class EventDetailsComponent implements OnInit {
     private eventService: EventService,
     public authService: AuthService,
     private cdr: ChangeDetectorRef
-  ) {
-    this.currentUserName = this.authService.getCurrentUser();
-  }
+  ) {}
 
   ngOnInit(): void {
     this.currentUserName = this.authService.getCurrentUser();
-    this.currentUserId = this.authService.getUserId();
+    const rawId = this.authService.getUserId();
+    this.currentUserId = rawId ? Number(rawId) : null;
 
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
@@ -96,6 +99,32 @@ export class EventDetailsComponent implements OnInit {
     this.eventService.unclaimFood(foodId).subscribe({
       next: () => this.loadEvent(this.event.eventId),
       error: (err) => console.error("Error unclaiming food:", err)
+    });
+  }
+
+  isEditingEvent = false;
+  editingFoodId: number | null = null;
+  tempEditValue = '';
+
+// Edit Event
+  onSaveEvent() {
+    this.eventService.updateEvent(this.event.eventId, this.event).subscribe({
+      next: () => this.isEditingEvent = false
+    });
+  }
+
+// Edit Food
+  startEditFood(food: any) {
+    this.editingFoodId = food.foodSuggestionId;
+    this.tempEditValue = food.foodName;
+  }
+
+  saveFoodEdit(foodId: number) {
+    this.eventService.updateFoodName(foodId, this.tempEditValue).subscribe({
+      next: () => {
+        this.editingFoodId = null;
+        this.loadEvent(this.event.eventId);
+      }
     });
   }
 }

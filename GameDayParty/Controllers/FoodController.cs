@@ -25,11 +25,13 @@ public class FoodController : ControllerBase
         var eventModel = await _context.Events.FindAsync(eventId);
         if (eventModel == null) return NotFound();
         
+        var currentUserId = GetUserId(); // Now an int
         var currentUserName = User.Identity?.Name;
 
         var newFood = new FoodSuggestion
         {
             FoodName = foodDto.FoodName,
+            SuggestedByUserId = currentUserId, 
             SuggestedByName = currentUserName ?? "Guest",
             EventId = eventId
         };
@@ -43,11 +45,12 @@ public class FoodController : ControllerBase
     [HttpPost("{foodId}/upvote")]
     public async Task<IActionResult> UpvoteFood(int foodId) 
     { 
-        var currentUserName = User.Identity?.Name;
-        if (string.IsNullOrEmpty(currentUserName)) return Unauthorized();
+        var currentUserId = GetUserId();
+        if (currentUserId == 0) return Unauthorized();
         
+        // Ensure VoterId is the property name in your UserVote model
         var existingVote = await _context.UserVotes
-            .FirstOrDefaultAsync(v => v.FoodSuggestionId == foodId && v.VoterName == currentUserName);
+            .FirstOrDefaultAsync(v => v.FoodSuggestionId == foodId && v.VoterId == currentUserId);
         
         var food = await _context.FoodSuggestions.FindAsync(foodId);
         if (food == null) return NotFound(); 
@@ -62,7 +65,7 @@ public class FoodController : ControllerBase
             _context.UserVotes.Add(new UserVote 
             { 
                 FoodSuggestionId = foodId, 
-                VoterName = currentUserName 
+                VoterId = currentUserId 
             });
             food.UpvoteCount++;
         }
@@ -77,47 +80,73 @@ public class FoodController : ControllerBase
         var food = await _context.FoodSuggestions.FindAsync(foodId);
         if (food == null) return NotFound();
 
-        var currentUserName = User.Identity?.Name;
-        food.ClaimedByName = currentUserName;
+        food.ClaimedByUserId = GetUserId(); 
+        food.ClaimedByName = User.Identity?.Name;
         
         await _context.SaveChangesAsync();
         return Ok(food);
     }
     
-    [Authorize]
     [HttpPut("{foodId}/unclaim")]
     public async Task<IActionResult> UnclaimFood(int foodId)
     {
         var food = await _context.FoodSuggestions.FindAsync(foodId);
         if (food == null) return NotFound();
 
-        var currentUserName = User.Identity?.Name;
-
-        if (food.ClaimedByName != currentUserName) 
+        // Secure check: Must match the ID of the person who claimed it
+        if (food.ClaimedByUserId != GetUserId()) 
         {
             return BadRequest("You can't unclaim someone else's snack!");
         }
 
+        food.ClaimedByUserId = null; // Requires public int? ClaimedByUserId in model
         food.ClaimedByName = null; 
         await _context.SaveChangesAsync();
         return Ok(food);
     }
     
-    //  DELETE
     [HttpDelete("{foodId}")]
-    [Authorize]
     public async Task<IActionResult> DeleteFood(int foodId)
     {
-        var food = await _context.FoodSuggestions.FindAsync(foodId);
+        var food = await _context.FoodSuggestions
+            .Include(f => f.Event)
+            .FirstOrDefaultAsync(f => f.FoodSuggestionId == foodId);
+            
         if (food == null) return NotFound();
 
-        var currentUserName = User.Identity?.Name;
+        var currentUserId = GetUserId();
     
-        // Check if user is the one who suggested it
-        if (food.SuggestedByName != currentUserName) return Forbid();
+        bool isSuggester = food.SuggestedByUserId == currentUserId;
+        bool isHost = (food.Event?.HostUserId ?? 0) == currentUserId;
+        
+        //Suggester OR Event Host can delete
+        if (!isSuggester && !isHost) 
+        {
+            return Forbid();
+        }
 
         _context.FoodSuggestions.Remove(food);
         await _context.SaveChangesAsync();
         return NoContent();
+    }
+
+    [HttpPatch("{id}/name")]
+    public async Task<IActionResult> UpdateFoodName(int id, [FromBody] string newName)
+    {
+        var food = await _context.FoodSuggestions.FindAsync(id);
+        if (food == null) return NotFound();
+
+        if (food.SuggestedByUserId != GetUserId()) return Forbid();
+
+        food.FoodName = newName;
+        await _context.SaveChangesAsync();
+        return NoContent();
+    }
+    
+    // Helper method to get the User ID as an integer
+    private int GetUserId()
+    {
+        var idString = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        return int.TryParse(idString, out int id) ? id : 0;
     }
 }

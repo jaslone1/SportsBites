@@ -10,27 +10,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-// This defines the API route: /api/events
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
-public class EventsController : ControllerBase
+public class EventController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    public EventsController(AppDbContext context)
+    public EventController(AppDbContext context) => _context = context;
+
+    // HELPER: Safely gets ID from Token as an Int
+    private int GetUserId()
     {
-        _context = context;
+        var idString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        return int.TryParse(idString, out int id) ? id : 0;
     }
 
-    // GET: api/Events
     [HttpGet]
     [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<EventDto>>> GetEvents()
     {
-        // 1. Get the current user ID (will be null if they aren't logged in)
-        var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        var currentUserId = GetUserId();
 
-        // 2. Filter: Show it if it's public OR if the user is the host
+        // Filter: Show public events OR events hosted by the current user
         var events = await _context.Events
             .Where(e => e.IsPublic || e.HostUserId == currentUserId) 
             .Select(e => new EventDto
@@ -40,21 +42,20 @@ public class EventsController : ControllerBase
                 EventDate = e.EventDate,
                 GameDetails = e.GameDetails,
                 HostName = e.HostName,
-                HostUserId = e.HostUserId,
+                HostUserId = e.HostUserId, // Now an int
                 IsFinalized = e.IsFinalized,
                 IsPublic = e.IsPublic 
             })
             .ToListAsync();
 
-        return events;
+        return Ok(events); // Ok() wraps the list to solve nullability warnings
     }
 
     [HttpGet("{eventId}")]
     [AllowAnonymous]
     public async Task<ActionResult<EventDto>> GetEvent(int eventId)
     {
-        var currentUserName = User.Identity?.Name;
-        var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        var currentUserId = GetUserId();
 
         var eventModel = await _context.Events
             .Include(e => e.FoodSuggestions)
@@ -62,23 +63,22 @@ public class EventsController : ControllerBase
 
         if (eventModel == null) return NotFound();
 
-        // PRIVACY CHECK:
-        // If it's private and you aren't the host, return Forbid or NotFound
+        // PRIVACY CHECK
         if (!eventModel.IsPublic && eventModel.HostUserId != currentUserId)
         {
             return Forbid(); 
         }
 
+        // VOTING CHECK: Use VoterId (int) instead of name
         var userVotes = new List<int>();
-        if (!string.IsNullOrEmpty(currentUserName))
+        if (currentUserId > 0)
         {
             userVotes = await _context.UserVotes
-                .Where(v => v.VoterName == currentUserName)
+                .Where(v => v.VoterId == currentUserId)
                 .Select(v => v.FoodSuggestionId)
                 .ToListAsync();
         }
 
-        // Map Model to DTO for response
         var eventDto = new EventDto
         {
             EventId = eventModel.EventId,
@@ -96,53 +96,47 @@ public class EventsController : ControllerBase
                     FoodSuggestionId = f.FoodSuggestionId,
                     FoodName = f.FoodName,
                     SuggestedByName = f.SuggestedByName,
+                    SuggestedByUserId = f.SuggestedByUserId, // Added for frontend edit checks
                     UpvoteCount = f.UpvoteCount,
                     HasUserUpvoted = userVotes.Contains(f.FoodSuggestionId),
-                    ClaimedByName = f.ClaimedByName
+                    ClaimedByName = f.ClaimedByName,
+                    ClaimedByUserId = f.ClaimedByUserId // Added for frontend unclaim checks
                 }).ToList()
         };
 
-        return eventDto;
+        return Ok(eventDto);
     }
 
-    // POST
-    [Authorize]
     [HttpPost]
     public async Task<IActionResult> PostEvent(EventDto eventDto)
     {
-        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        var currentUserId = GetUserId();
         
-        var currentUserName = User.Identity?.Name; 
-        // 1. Convert DTO to Model
         var newEvent = new Event
         {
             EventName = eventDto.EventName,
             EventDate = DateTime.SpecifyKind(eventDto.EventDate, DateTimeKind.Utc),
             GameDetails = eventDto.GameDetails,
-            HostUserId = userId,
-            HostName = currentUserName ?? eventDto.HostName,
+            HostUserId = currentUserId, // int matches int
+            HostName = User.Identity?.Name ?? "Host",
+            IsPublic = eventDto.IsPublic,
             IsFinalized = false 
         };
 
-        // 2. Add to DbContext and Save
         _context.Events.Add(newEvent);
         await _context.SaveChangesAsync();
         
-        // 3. Return a 201 Created status code for new event
         return CreatedAtAction(nameof(GetEvent), new { eventId = newEvent.EventId }, newEvent);
     }
     
-    // PUT
-    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventUpdateDto model)
     {
         var existingEvent = await _context.Events.FindAsync(id);
         if (existingEvent == null) return NotFound();
 
-        // SECURITY: Ensure the person editing is the owner
-        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (existingEvent.HostUserId != currentUserId) return Forbid();
+        // Security check using int
+        if (existingEvent.HostUserId != GetUserId()) return Forbid();
 
         existingEvent.EventName = model.EventName;
         existingEvent.GameDetails = model.GameDetails;
@@ -152,34 +146,28 @@ public class EventsController : ControllerBase
         return Ok(existingEvent);
     }
     
-    // DELETE
     [HttpDelete("{id}")]
-    [Authorize]
     public async Task<IActionResult> DeleteEvent(int id)
     {
         var eventModel = await _context.Events.FindAsync(id);
         if (eventModel == null) return NotFound();
 
-        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (eventModel.HostUserId != currentUserId) return Forbid();
+        if (eventModel.HostUserId != GetUserId()) return Forbid();
 
         _context.Events.Remove(eventModel);
         await _context.SaveChangesAsync();
-        return NoContent(); // 204 success
+        return NoContent();
     }
     
-    // PATCH
     [HttpPatch("{id}/finalize")]
-    [Authorize]
     public async Task<IActionResult> FinalizeEvent(int id)
     {
         var eventModel = await _context.Events.FindAsync(id);
         if (eventModel == null) return NotFound();
 
-        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (eventModel.HostUserId != currentUserId) return Forbid();
+        if (eventModel.HostUserId != GetUserId()) return Forbid();
 
-        eventModel.IsFinalized = !eventModel.IsFinalized; // Toggle status
+        eventModel.IsFinalized = !eventModel.IsFinalized;
         await _context.SaveChangesAsync();
         return Ok(new { isFinalized = eventModel.IsFinalized });
     }

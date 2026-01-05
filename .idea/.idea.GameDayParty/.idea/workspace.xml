@@ -9,7 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Controllers/EventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Controllers/FoodController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Controllers/FoodController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/Event.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/EventDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/EventDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/FoodSuggestionDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/Models/UserVote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/Models/UserVote.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/bin/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/GameDayParty.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/ref/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameDayParty/obj/Debug/net8.0/refint/GameDayParty.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +182,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="108562000" />
+      <workItem from="1766513092725" duration="114376000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -452,7 +472,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767484831874</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="updatecd HTML on details page">
+      <option name="closed" value="true" />
+      <created>1767485488898</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1767485488898</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +490,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added Dtos file that forgot last time." />
     <MESSAGE value="updated Dto data types" />
     <MESSAGE value="updated hostuserId to not default to a string" />
     <MESSAGE value="updated angular event service url" />
@@ -487,7 +514,8 @@
     <MESSAGE value="patching html and github link" />
     <MESSAGE value="forgot to remove extra onClaim function" />
     <MESSAGE value="added uncliam back in" />
-    <option name="LAST_COMMIT_MESSAGE" value="added uncliam back in" />
+    <MESSAGE value="updatecd HTML on details page" />
+    <option name="LAST_COMMIT_MESSAGE" value="updatecd HTML on details page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
