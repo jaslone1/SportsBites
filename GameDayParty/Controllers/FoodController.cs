@@ -51,7 +51,7 @@ public class FoodController : ControllerBase
     public async Task<IActionResult> UpvoteFood(int foodId) 
     { 
         var currentUserId = GetUserId();
-        if (currentUserId == 0) return Unauthorized();
+        if (string.IsNullOrEmpty(currentUserId)) return Unauthorized();
         
         // Ensure VoterId is the property name in your UserVote model
         var existingVote = await _context.UserVotes
@@ -104,7 +104,7 @@ public class FoodController : ControllerBase
             return BadRequest("You can't unclaim someone else's snack!");
         }
 
-        food.ClaimedByUserId = null; // Requires public int? ClaimedByUserId in model
+        food.ClaimedByUserId = null;
         food.ClaimedByName = null; 
         await _context.SaveChangesAsync();
         return Ok(food);
