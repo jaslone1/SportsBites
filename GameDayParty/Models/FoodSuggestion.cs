@@ -6,7 +6,7 @@ namespace GameDayParty.Models
     {
         [Key]
         public int FoodSuggestionId { get; set; }
-        public int SuggestedByUserId { get; set; }
+        public string SuggestedByUserId { get; set; }
         public int EventId { get; set; }
         [Required]
         public string FoodName { get; set; } = string.Empty;
@@ -16,6 +16,6 @@ namespace GameDayParty.Models
         public bool IsVegetarian { get; set; }
         public int UpvoteCount { get; set; } = 0;
         public string? ClaimedByName { get; set; }
-        public int? ClaimedByUserId { get; set; }
+        public string? ClaimedByUserId { get; set; }
     }
 }

@@ -14,7 +14,7 @@ export class EventDetailsComponent implements OnInit {
   event: any = null;
   newFoodName = '';
   currentUserName: string | null = null;
-  currentUserId: number | null = null;
+  currentUserId: string | null = null;
 
   isEditingEvent = false;
   editingFoodId: number | null = null;
@@ -30,8 +30,7 @@ export class EventDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUserName = this.authService.getCurrentUser();
-    const rawId = this.authService.getUserId();
-    this.currentUserId = rawId ? Number(rawId) : null;
+    this.currentUserId  = this.authService.getUserId();
 
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
