@@ -46,6 +46,7 @@
     <div class="card-header bg-white font-weight-bold">
       <h4 class="mb-0">Food Suggestions</h4>
     </div>
+
     <div class="list-group list-group-flush">
       <div *ngFor="let food of event.foodSuggestions" class="list-group-item py-3">
 
@@ -54,14 +55,14 @@
 
           <div>
             <div class="d-flex align-items-center">
-              <h5 class="mb-1">{{ food.foodName }}</h5>
+              <h5 class="mb-1 me-3">{{ food.foodName }}</h5>
 
-              <div *ngIf="canEditFood(food) && !event.isFinalized" class="ms-2">
-                <button (click)="startEditFood(food)" class="btn btn-sm btn-link p-0 text-primary me-2">EDIT
-                  <i class="bi bi-pencil-square"></i>
+              <div *ngIf="canEditFood(food) && !event.isFinalized" class="btn-group">
+                <button (click)="startEditFood(food)" class="btn btn-sm btn-outline-primary py-0">
+                  Edit
                 </button>
-                <button (click)="onDeleteFood(food.foodSuggestionId)" class="btn btn-sm btn-link p-0 text-danger">DELETE
-                  <i class="bi bi-trash"></i>
+                <button (click)="onDeleteFood(food.foodSuggestionId)" class="btn btn-sm btn-outline-danger py-0">
+                  Delete
                 </button>
               </div>
             </div>
@@ -69,77 +70,50 @@
             <small class="text-muted">Suggested by: {{ food.suggestedByName }}</small>
 
             <div class="mt-2">
-            <span *ngIf="food.claimedByName" class="badge rounded-pill bg-success">
-              <i class="bi bi-person-check"></i> Coming from: {{ food.claimedByName }}
+            <span *ngIf="food.claimedByUserId" class="badge rounded-pill bg-success">
+              Coming from: {{ food.claimedByName }}
             </span>
-              <span *ngIf="!food.claimedByName" class="badge rounded-pill bg-light text-dark border">
+              <span *ngIf="!food.claimedByUserId" class="badge rounded-pill bg-light text-dark border">
               Needs someone to bring this!
             </span>
             </div>
           </div>
 
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center gap-2">
+
             <button *ngIf="authService.isLoggedIn() && !event.isFinalized"
                     (click)="onVote(food.foodSuggestionId)"
-                    class="btn btn-link text-decoration-none p-0 me-3">VOTE
-              <i [class]="food.hasUserUpvoted ? 'bi bi-heart-fill text-danger' : 'bi bi-heart text-secondary'" style="font-size: 1.2rem;"></i>
-              <span class="ms-1 text-dark">{{ food.upvoteCount }}</span>
+                    [class]="food.hasUserUpvoted ? 'btn btn-sm btn-danger' : 'btn btn-sm btn-outline-secondary'">
+              {{ food.hasUserUpvoted ? 'Liked' : 'Vote' }} ({{ food.upvoteCount }})
             </button>
 
-            <ng-container *ngIf="authService.isLoggedIn(); else guestClaimView">
-              <button *ngIf="!food.claimedByName"
+            <ng-container *ngIf="authService.isLoggedIn() && !event.isFinalized">
+              <button *ngIf="!food.claimedByUserId"
                       (click)="onClaim(food.foodSuggestionId)"
                       class="btn btn-sm btn-primary">
-                Claim This!
+                Claim
               </button>
               <button *ngIf="isClaimant(food)"
                       (click)="onUnclaim(food.foodSuggestionId)"
-                      class="btn btn-sm btn-outline-danger">
+                      class="btn btn-sm btn-warning">
                 Unclaim
               </button>
             </ng-container>
 
-            <ng-template #guestClaimView>
-            <span *ngIf="!food.claimedByName" class="text-muted small italic">
-              (Login to claim)
-            </span>
-            </ng-template>
           </div>
         </div>
 
         <ng-template #editFoodTemplate>
           <div class="input-group">
-            <input [(ngModel)]="tempEditValue" class="form-control" placeholder="Food name">
-            <button (click)="saveFoodEdit(food.foodSuggestionId)" class="btn btn-success btn-sm">
-              <i class="bi bi-check-lg"></i> Save
-            </button>
-            <button (click)="editingFoodId = null" class="btn btn-secondary btn-sm">
-              Cancel
-            </button>
+            <input [(ngModel)]="tempEditValue" class="form-control" (keyup.enter)="saveFoodEdit(food.foodSuggestionId)">
+            <button (click)="saveFoodEdit(food.foodSuggestionId)" class="btn btn-success btn-sm">Save</button>
+            <button (click)="editingFoodId = null" class="btn btn-secondary btn-sm">Cancel</button>
           </div>
         </ng-template>
 
       </div>
     </div>
   </div>
-  <div *ngIf="!event.isFinalized" class="card shadow-sm mb-4">
-    <div class="card-body">
-      <h5 class="card-title">Suggest a Snack</h5>
-      <div class="input-group">
-        <input type="text"
-               [(ngModel)]="newFoodName"
-               class="form-control"
-               placeholder="What should people bring? (e.g. Buffalo Wings)">
-        <button (click)="suggestFood()"
-                class="btn btn-primary"
-                [disabled]="!newFoodName.trim()">
-          <i class="bi bi-plus-lg"></i> Add to List
-        </button>
-      </div>
-      <small class="text-muted mt-2 d-block">Suggestions are open until the host finalizes the menu.</small>
-    </div>
-  </div>
-</div>
 
 <ng-template #loading>
   <div class="text-center mt-5">

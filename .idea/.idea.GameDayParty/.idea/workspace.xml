@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,23 +164,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="140803000" />
-    </task>
-    <task id="LOCAL-00016" summary="Addint User Registration to backend">
-      <option name="closed" value="true" />
-      <created>1767190793298</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1767190793298</updated>
-    </task>
-    <task id="LOCAL-00017" summary="updated Register backend and added to frontend">
-      <option name="closed" value="true" />
-      <created>1767196927618</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1767196927618</updated>
+      <workItem from="1766513092725" duration="141759000" />
     </task>
     <task id="LOCAL-00018" summary="Added in standalone line for register and added to imports">
       <option name="closed" value="true" />
@@ -556,7 +542,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767737111290</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="another edit html change">
+      <option name="closed" value="true" />
+      <created>1767737970735</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1767737970735</updated>
+    </task>
+    <task id="LOCAL-00066" summary="addded vote in">
+      <option name="closed" value="true" />
+      <created>1767738181807</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1767738181807</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,8 +568,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fixed event patch URL" />
-    <MESSAGE value="update routes" />
     <MESSAGE value="confirmed all UserIds are string to match UUIDs in database" />
     <MESSAGE value="more id updates to switch all to string" />
     <MESSAGE value="few more int/string IDs bugs" />
@@ -591,7 +591,9 @@
     <MESSAGE value="quick fix to correct data issue" />
     <MESSAGE value="error messaging" />
     <MESSAGE value="Added word to button. Hope this fixes but will be annoying" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added word to button. Hope this fixes but will be annoying" />
+    <MESSAGE value="another edit html change" />
+    <MESSAGE value="addded vote in" />
+    <option name="LAST_COMMIT_MESSAGE" value="addded vote in" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
