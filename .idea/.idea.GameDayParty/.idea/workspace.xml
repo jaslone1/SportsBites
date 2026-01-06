@@ -162,15 +162,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="136659000" />
-    </task>
-    <task id="LOCAL-00010" summary="updated environmental vairable">
-      <option name="closed" value="true" />
-      <created>1767150608276</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1767150608276</updated>
+      <workItem from="1766513092725" duration="137122000" />
     </task>
     <task id="LOCAL-00011" summary="moved Dtos out of .client folder and into models.cs">
       <option name="closed" value="true" />
@@ -556,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767732205006</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="adding error message to chase edit issue">
+      <option name="closed" value="true" />
+      <created>1767733743049</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1767733743049</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +566,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="patching html and github link" />
     <MESSAGE value="forgot to remove extra onClaim function" />
     <MESSAGE value="added uncliam back in" />
     <MESSAGE value="updatecd HTML on details page" />
@@ -591,7 +590,8 @@
     <MESSAGE value="update delete naming" />
     <MESSAGE value="updated service name" />
     <MESSAGE value="another name change" />
-    <option name="LAST_COMMIT_MESSAGE" value="another name change" />
+    <MESSAGE value="adding error message to chase edit issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding error message to chase edit issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

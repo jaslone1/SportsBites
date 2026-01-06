@@ -146,13 +146,15 @@ export class EventDetailsComponent implements OnInit {
     const isSuggester = String(food.suggestedByUserId) === String(userId);
     const isHost = this.isHost();
 
-    return isSuggester || isHost;
     console.log('EDIT FOOD CHECK', {
       foodId: food.foodSuggestionId,
       suggestedByUserId: food.suggestedByUserId,
       currentUserId: userId,
       isHost: this.isHost()
     });
+
+    return isSuggester || isHost;
+
   }
 
   // Check if current user is the one who claimed the item
