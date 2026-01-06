@@ -57,10 +57,10 @@
               <h5 class="mb-1">{{ food.foodName }}</h5>
 
               <div *ngIf="food.canEdit && !event.isFinalized" class="ms-2">
-                <button (click)="startEditFood(food)" class="btn btn-sm btn-link p-0 text-primary me-2">
+                <button (click)="startEditFood(food)" class="btn btn-sm btn-link p-0 text-primary me-2">EDIT
                   <i class="bi bi-pencil-square"></i>
                 </button>
-                <button (click)="onDeleteFood(food.foodSuggestionId)" class="btn btn-sm btn-link p-0 text-danger">
+                <button (click)="onDeleteFood(food.foodSuggestionId)" class="btn btn-sm btn-link p-0 text-danger">VOTE
                   <i class="bi bi-trash"></i>
                 </button>
               </div>

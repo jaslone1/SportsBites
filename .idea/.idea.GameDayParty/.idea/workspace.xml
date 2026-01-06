@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/services/event.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/services/event.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,15 +165,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="139433000" />
-    </task>
-    <task id="LOCAL-00014" summary="updated hostuserId to not default to a string">
-      <option name="closed" value="true" />
-      <created>1767152831162</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1767152831162</updated>
+      <workItem from="1766513092725" duration="140168000" />
     </task>
     <task id="LOCAL-00015" summary="updated angular event service url">
       <option name="closed" value="true" />
@@ -559,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767735666759</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="error messaging">
+      <option name="closed" value="true" />
+      <created>1767736643107</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1767736643107</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +569,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added backend editing possibilities and test migration/build. front end html editing added in an well" />
     <MESSAGE value="fixed few bugs causing deploy erros" />
     <MESSAGE value="fixed event patch URL" />
     <MESSAGE value="update routes" />
@@ -594,7 +593,8 @@
     <MESSAGE value="error messgae but better" />
     <MESSAGE value="adding more user login handling" />
     <MESSAGE value="quick fix to correct data issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="quick fix to correct data issue" />
+    <MESSAGE value="error messaging" />
+    <option name="LAST_COMMIT_MESSAGE" value="error messaging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
