@@ -74,7 +74,7 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-  onDelete() {
+  onDeleteFood() {
     if (!this.event) return;
     if (confirm("Are you sure you want to cancel this Game Day party?")) {
       this.eventService.deleteEvent(this.event.eventId).subscribe({

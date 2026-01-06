@@ -60,4 +60,7 @@ export class EventService {
       headers: { 'Content-Type': 'application/json' }
     });
   }
+  deleteFoodSuggestion(foodId: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/food/${foodId}`);
+  }
 }
