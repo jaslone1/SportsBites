@@ -1,40 +1,45 @@
-<div *ngIf="!isEditingEvent; else editEventTemplate" class="d-flex justify-content-between">
-<div>
-  <h2 class="text-primary mb-0">{{ event.eventName }}</h2>
-  <p class="lead text-muted">{{ event.gameDetails }}</p>
-  <button *ngIf="isHost()" (click)="isEditingEvent = true" class="btn btn-sm btn-outline-secondary">
-    <i class="bi bi-gear"></i> Edit Details
-  </button>
-</div>
-</div>
-
-<ng-template #editEventTemplate>
-  <div class="card p-3 mb-3 border-primary">
-    <input [(ngModel)]="event.eventName" class="form-control mb-2" placeholder="Event Name">
-    <textarea [(ngModel)]="event.gameDetails" class="form-control mb-2" placeholder="Game Details"></textarea>
-    <div class="d-flex gap-2">
-      <button (click)="onSaveEvent()" class="btn btn-success btn-sm">Save Changes</button>
-      <button (click)="isEditingEvent = false" class="btn btn-secondary btn-sm">Cancel</button>
-    </div>
-  </div>
-</ng-template>
-
 <div *ngIf="event; else loading" class="container mt-4 mb-5">
 
-  <div class="d-flex justify-content-between align-items-start mb-3">
-    <div>
-      <h2 class="text-primary mb-0">{{ event.eventName }}</h2>
-      <p class="lead text-muted">{{ event.gameDetails }}</p>
-    </div>
+  <div class="card shadow-sm mb-4 border-0 bg-light">
+    <div class="card-body">
+      <div *ngIf="!isEditingEvent; else editEventTemplate">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h2 class="text-primary mb-0">{{ event.eventName }}</h2>
+            <p class="lead text-muted">{{ event.gameDetails }}</p>
+            <button *ngIf="isHost()" (click)="isEditingEvent = true" class="btn btn-sm btn-outline-secondary">
+              <i class="bi bi-pencil"></i> Edit Event Details
+            </button>
+          </div>
 
-    <div class="text-end">
-      <span *ngIf="event.isFinalized" class="badge bg-dark mb-2">🔒 Locked</span>
-      <span *ngIf="!event.isPublic" class="badge bg-info d-block">🕵️ Private Event</span>
+          <div class="text-end">
+            <span *ngIf="event.isFinalized" class="badge bg-dark d-block mb-1">🔒 Locked</span>
+            <span *ngIf="!event.isPublic" class="badge bg-info d-block">🕵️ Private</span>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #editEventTemplate>
+        <div class="p-2">
+          <label class="small fw-bold">Event Name</label>
+          <input [(ngModel)]="event.eventName" class="form-control mb-2" placeholder="Party Name">
+
+          <label class="small fw-bold">Game Details / Description</label>
+          <textarea [(ngModel)]="event.gameDetails" class="form-control mb-2" rows="3" placeholder="What are we watching?"></textarea>
+
+          <div class="d-flex gap-2">
+            <button (click)="onSaveEvent()" class="btn btn-success btn-sm">
+              <i class="bi bi-check-lg"></i> Save Changes
+            </button>
+            <button (click)="isEditingEvent = false" class="btn btn-secondary btn-sm">Cancel</button>
+          </div>
+        </div>
+      </ng-template>
     </div>
   </div>
 
   <div *ngIf="event.isFinalized" class="alert alert-success border-0 shadow-sm mb-4">
-    <i class="bi bi-info-circle-fill me-2"></i> The host has finalized this menu. You can still claim unclaimed items!
+    <i class="bi bi-info-circle-fill me-2"></i> The host has finalized this menu. You can still claim items!
   </div>
 
   <div class="card shadow-sm mb-4">
