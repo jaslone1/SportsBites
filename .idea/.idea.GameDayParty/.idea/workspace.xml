@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,23 +165,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="134304000" />
-    </task>
-    <task id="LOCAL-00007" summary="one more update to program.cs">
-      <option name="closed" value="true" />
-      <created>1767148644733</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1767148644733</updated>
-    </task>
-    <task id="LOCAL-00008" summary="remove/browser from dockerfile abgular filepath">
-      <option name="closed" value="true" />
-      <created>1767149128969</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1767149128969</updated>
+      <workItem from="1766513092725" duration="135272000" />
     </task>
     <task id="LOCAL-00009" summary="last updates to remove blazor WebAssembly projest things">
       <option name="closed" value="true" />
@@ -556,7 +543,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767729985806</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="update delete naming">
+      <option name="closed" value="true" />
+      <created>1767730439969</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1767730439969</updated>
+    </task>
+    <task id="LOCAL-00057" summary="updated service name">
+      <option name="closed" value="true" />
+      <created>1767730601908</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1767730601908</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,8 +569,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="updated details component to include Router import&#10;added getUserId and updated current user to use tokens and not local storage&#10;Added the updated Urls to the EventService class" />
-    <MESSAGE value="update email to username" />
     <MESSAGE value="addind in isPublic to data" />
     <MESSAGE value="patching html and github link" />
     <MESSAGE value="forgot to remove extra onClaim function" />
@@ -591,7 +592,9 @@
     <MESSAGE value="addedd userID fixes since it came through empty" />
     <MESSAGE value="forgot }" />
     <MESSAGE value="delete food route in html" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete food route in html" />
+    <MESSAGE value="update delete naming" />
+    <MESSAGE value="updated service name" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated service name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

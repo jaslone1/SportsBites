@@ -74,11 +74,12 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-  onDeleteFood() {
+  onDeleteFood(foodId: number) {
     if (!this.event) return;
     if (confirm("Are you sure you want to cancel this Game Day party?")) {
       this.eventService.deleteEvent(this.event.eventId).subscribe({
-        next: () => this.router.navigate(['/'])
+        next: () => this.loadEvent(this.event.eventId),
+        error: (err) => console.error("Delete failed", err)
       });
     }
   }
