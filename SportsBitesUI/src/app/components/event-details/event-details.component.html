@@ -118,6 +118,23 @@
       </div>
     </div>
   </div>
+  <div *ngIf="!event.isFinalized" class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Suggest a Snack</h5>
+      <div class="input-group">
+        <input type="text"
+               [(ngModel)]="newFoodName"
+               class="form-control"
+               placeholder="What should people bring? (e.g. Buffalo Wings)">
+        <button (click)="suggestFood()"
+                class="btn btn-primary"
+                [disabled]="!newFoodName.trim()">
+          <i class="bi bi-plus-lg"></i> Add to List
+        </button>
+      </div>
+      <small class="text-muted mt-2 d-block">Suggestions are open until the host finalizes the menu.</small>
+    </div>
+  </div>
 </div>
 
 <ng-template #loading>
