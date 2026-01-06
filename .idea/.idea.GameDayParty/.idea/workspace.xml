@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,15 +162,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="141759000" />
-    </task>
-    <task id="LOCAL-00018" summary="Added in standalone line for register and added to imports">
-      <option name="closed" value="true" />
-      <created>1767197897344</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1767197897344</updated>
+      <workItem from="1766513092725" duration="142110000" />
     </task>
     <task id="LOCAL-00019" summary="added register button">
       <option name="closed" value="true" />
@@ -558,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767738181807</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="CSS updates finally">
+      <option name="closed" value="true" />
+      <created>1767738859058</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1767738859058</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +566,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="confirmed all UserIds are string to match UUIDs in database" />
     <MESSAGE value="more id updates to switch all to string" />
     <MESSAGE value="few more int/string IDs bugs" />
     <MESSAGE value="hopefully final spot that string update needed" />
@@ -593,7 +590,8 @@
     <MESSAGE value="Added word to button. Hope this fixes but will be annoying" />
     <MESSAGE value="another edit html change" />
     <MESSAGE value="addded vote in" />
-    <option name="LAST_COMMIT_MESSAGE" value="addded vote in" />
+    <MESSAGE value="CSS updates finally" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS updates finally" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
