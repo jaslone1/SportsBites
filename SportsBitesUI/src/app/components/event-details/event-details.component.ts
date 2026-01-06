@@ -52,17 +52,15 @@ export class EventDetailsComponent implements OnInit {
 
         const userId = this.authService.getUserId();
 
-        if (!userId) {
-          console.warn("User ID not found during load. Permission buttons might not show.");
-        }
+        console.log("--- DEBUG PERMISSIONS ---");
+        console.log("Logged In User ID:", userId);
+        console.log("Event Host ID:", this.event.hostUserId);
 
         this.event.foodSuggestions.forEach((food: any) => {
-          food.canEdit =
-            !!userId &&
-            (
-              String(food.suggestedByUserId) === String(userId) ||
-              String(this.event.hostUserId) === String(userId)
-            );
+          console.log(`Food: ${food.foodName}`);
+          console.log(`- Suggester ID: ${food.suggestedByUserId}`);
+          console.log(`- Is Host? ${String(this.event.hostUserId) === String(userId)}`);
+          console.log(`- Is Suggester? ${String(food.suggestedByUserId) === String(userId)}`);
         });
         this.cdr.detectChanges();
       }

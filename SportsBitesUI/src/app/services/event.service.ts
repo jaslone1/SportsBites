@@ -61,6 +61,6 @@ export class EventService {
     });
   }
   deleteFoodSuggestion(foodId: number): Observable<any> {
-    return this.http.delete(`${this.foodUrl}/food/${foodId}`);
+    return this.http.delete(`${this.foodUrl}/${foodId}`);
   }
 }
