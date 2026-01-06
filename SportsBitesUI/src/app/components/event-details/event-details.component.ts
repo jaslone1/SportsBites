@@ -36,6 +36,10 @@ export class EventDetailsComponent implements OnInit {
       const id = params.get('id');
       if (id && id !== '0') {
         this.loadEvent(Number(id));
+
+        //this should hopefully fix the empty user ID issue by retrying
+        if (!this.currentUserId) {
+          this.currentUserId = this.authService.getUserId();
       }
     });
   }
@@ -44,11 +48,10 @@ export class EventDetailsComponent implements OnInit {
     this.eventService.getEvent(id).subscribe({
       next: (data) => {
         this.event = data;
+        // Re-assign these here to force Angular to recognize them
         this.currentUserId = this.authService.getUserId();
+        this.currentUserName = this.authService.getCurrentUser();
         this.cdr.detectChanges();
-      },
-      error: (err) => {
-        console.error("API Error:", err);
       }
     });
   }
@@ -101,7 +104,7 @@ export class EventDetailsComponent implements OnInit {
       error: (err) => console.error("Error unclaiming food:", err)
     });
   }
-// Edit Event
+
   onSaveEvent() {
     this.eventService.updateEvent(this.event.eventId, this.event).subscribe({
       next: () => this.isEditingEvent = false
@@ -127,15 +130,21 @@ export class EventDetailsComponent implements OnInit {
 
   // Check if current user is the host
   isHost(): boolean {
-    if (!this.event || !this.currentUserId) return false;
-    return String(this.event.hostUserId) === String(this.currentUserId);
+    const userId = this.authService.getUserId();
+    if (!this.event || !userId) return false;
+
+    return String(this.event.hostUserId) === String(userId);
   }
 
 // Check if current user suggested the specific food
   canEditFood(food: any): boolean {
-    if (!this.currentUserId || !food) return false;
-    const isSuggester = String(food.suggestedByUserId) === String(this.currentUserId);
-    return isSuggester || this.isHost();
+    const userId = this.authService.getUserId();
+    if (!userId || !food) return false;
+
+    const isSuggester = String(food.suggestedByUserId) === String(userId);
+    const isHost = this.isHost();
+
+    return isSuggester || isHost;
   }
 
   // Check if current user is the one who claimed the item

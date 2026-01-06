@@ -65,12 +65,10 @@ export class AuthService {
     if (!token) return null;
 
     try {
-      // A JWT token has 3 parts separated by dots. The 2nd part [1] is the data.
-      // atob decodes the Base64 string so we can read the JSON inside.
       const payload = JSON.parse(atob(token.split('.')[1]));
 
-      // .NET usually stores the ID in one of these two keys:
-      return payload.nameid ||
+      return payload.sub ||  // <--- Add this first!
+        payload.nameid ||
         payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'] ||
         null;
     } catch (e) {
