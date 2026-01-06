@@ -44,6 +44,7 @@ export class EventDetailsComponent implements OnInit {
     this.eventService.getEvent(id).subscribe({
       next: (data) => {
         this.event = data;
+        this.currentUserId = this.authService.getUserId();
         this.cdr.detectChanges();
       },
       error: (err) => {
