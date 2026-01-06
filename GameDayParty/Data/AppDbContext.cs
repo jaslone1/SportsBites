@@ -25,7 +25,10 @@ namespace GameDayParty.Data
                 .HasKey(e => e.EventId); 
     
             modelBuilder.Entity<FoodSuggestion>()
-                .HasKey(s => s.FoodSuggestionId);
+                .HasOne(f => f.Event)           // Each suggestion has one Event
+                .WithMany(e => e.FoodSuggestions) // Each Event has many FoodSuggestions
+                .HasForeignKey(f => f.EventId)  // Use this specific column as the link
+                .IsRequired();                  // A suggestion must belong to an event
             
             modelBuilder.Entity<Event>().HasData(
                 new Event {
