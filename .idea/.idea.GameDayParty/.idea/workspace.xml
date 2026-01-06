@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,15 +162,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="137899000" />
-    </task>
-    <task id="LOCAL-00012" summary="Added Dtos file that forgot last time.">
-      <option name="closed" value="true" />
-      <created>1767152041946</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1767152041946</updated>
+      <workItem from="1766513092725" duration="138692000" />
     </task>
     <task id="LOCAL-00013" summary="updated Dto data types">
       <option name="closed" value="true" />
@@ -560,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767734221683</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="adding more user login handling">
+      <option name="closed" value="true" />
+      <created>1767735065223</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1767735065223</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +566,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added uncliam back in" />
     <MESSAGE value="updatecd HTML on details page" />
     <MESSAGE value="added backend editing possibilities and test migration/build. front end html editing added in an well" />
     <MESSAGE value="fixed few bugs causing deploy erros" />
@@ -595,7 +590,8 @@
     <MESSAGE value="another name change" />
     <MESSAGE value="adding error message to chase edit issue" />
     <MESSAGE value="error messgae but better" />
-    <option name="LAST_COMMIT_MESSAGE" value="error messgae but better" />
+    <MESSAGE value="adding more user login handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding more user login handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

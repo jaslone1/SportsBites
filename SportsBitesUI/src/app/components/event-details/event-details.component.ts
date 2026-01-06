@@ -56,7 +56,7 @@ export class EventDetailsComponent implements OnInit {
           console.warn("User ID not found during load. Permission buttons might not show.");
         }
 
-        this.event.foodSuggestions.forEach(food => {
+        this.event.foodSuggestions.forEach((food: any) => {
           food.canEdit =
             !!userId &&
             (
