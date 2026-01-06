@@ -40,6 +40,7 @@ export class EventDetailsComponent implements OnInit {
         //this should hopefully fix the empty user ID issue by retrying
         if (!this.currentUserId) {
           this.currentUserId = this.authService.getUserId();
+        }
       }
     });
   }

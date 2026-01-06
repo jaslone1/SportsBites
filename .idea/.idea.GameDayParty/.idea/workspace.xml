@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,15 +164,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="132678000" />
-    </task>
-    <task id="LOCAL-00004" summary="preparing for final push">
-      <option name="closed" value="true" />
-      <created>1767145164504</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1767145164504</updated>
+      <workItem from="1766513092725" duration="133302000" />
     </task>
     <task id="LOCAL-00005" summary="Updated pathing at end of build">
       <option name="closed" value="true" />
@@ -559,7 +550,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767721743773</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="addedd userID fixes since it came through empty">
+      <option name="closed" value="true" />
+      <created>1767728978351</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1767728978351</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +568,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="updated authservice to be public in home-page" />
     <MESSAGE value="few minor html changes" />
     <MESSAGE value="New paths for delete and patch.&#10;Updated HTML to use these new paths." />
     <MESSAGE value="updated details component to include Router import&#10;added getUserId and updated current user to use tokens and not local storage&#10;Added the updated Urls to the EventService class" />
@@ -594,7 +592,8 @@
     <MESSAGE value="backend relations updated" />
     <MESSAGE value="added buttons to details page" />
     <MESSAGE value="slowed event load to ensure userID comesthorough properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="slowed event load to ensure userID comesthorough properly" />
+    <MESSAGE value="addedd userID fixes since it came through empty" />
+    <option name="LAST_COMMIT_MESSAGE" value="addedd userID fixes since it came through empty" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
