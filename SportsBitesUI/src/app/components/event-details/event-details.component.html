@@ -60,7 +60,7 @@
                 <button (click)="startEditFood(food)" class="btn btn-sm btn-link p-0 text-primary me-2">EDIT
                   <i class="bi bi-pencil-square"></i>
                 </button>
-                <button (click)="onDeleteFood(food.foodSuggestionId)" class="btn btn-sm btn-link p-0 text-danger">VOTE
+                <button (click)="onDeleteFood(food.foodSuggestionId)" class="btn btn-sm btn-link p-0 text-danger">DELETE
                   <i class="bi bi-trash"></i>
                 </button>
               </div>
@@ -81,7 +81,7 @@
           <div class="d-flex align-items-center">
             <button *ngIf="authService.isLoggedIn() && !event.isFinalized"
                     (click)="onVote(food.foodSuggestionId)"
-                    class="btn btn-link text-decoration-none p-0 me-3">
+                    class="btn btn-link text-decoration-none p-0 me-3">VOTE
               <i [class]="food.hasUserUpvoted ? 'bi bi-heart-fill text-danger' : 'bi bi-heart text-secondary'" style="font-size: 1.2rem;"></i>
               <span class="ms-1 text-dark">{{ food.upvoteCount }}</span>
             </button>
