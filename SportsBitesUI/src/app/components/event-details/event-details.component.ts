@@ -123,4 +123,23 @@ export class EventDetailsComponent implements OnInit {
       error: (err) => console.error("Error updating food:", err)
     });
   }
+
+  // Check if current user is the host
+  isHost(): boolean {
+    if (!this.event || !this.currentUserId) return false;
+    return String(this.event.hostUserId) === String(this.currentUserId);
+  }
+
+// Check if current user suggested the specific food
+  canEditFood(food: any): boolean {
+    if (!this.currentUserId || !food) return false;
+    const isSuggester = String(food.suggestedByUserId) === String(this.currentUserId);
+    return isSuggester || this.isHost();
+  }
+
+  // Check if current user is the one who claimed the item
+  isClaimant(food: any): boolean {
+    if (!this.currentUserId || !food.claimedByUserId) return false;
+    return String(food.claimedByUserId) === String(this.currentUserId);
+  }
 }

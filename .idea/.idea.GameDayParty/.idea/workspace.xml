@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="" />
+    <list default="true" id="2b9c7aa1-a591-4895-859b-0624b4a24f01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDayParty/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SportsBitesUI/src/app/components/event-details/event-details.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +165,7 @@
       <workItem from="1765839070514" duration="17439000" />
       <workItem from="1765914451471" duration="30744000" />
       <workItem from="1766095322500" duration="15904000" />
-      <workItem from="1766513092725" duration="123834000" />
+      <workItem from="1766513092725" duration="126229000" />
     </task>
     <task id="LOCAL-00001" summary="food list and events list updates">
       <option name="closed" value="true" />
@@ -532,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767657134069</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="changed hostUserId to lowercase">
+      <option name="closed" value="true" />
+      <created>1767712370731</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1767712370731</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +553,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added details buttong ot home page" />
     <MESSAGE value="adding more unlogged in features" />
     <MESSAGE value="added login QoL" />
     <MESSAGE value="fixed auth.guard errors" />
@@ -567,7 +577,8 @@
     <MESSAGE value="few more int/string IDs bugs" />
     <MESSAGE value="hopefully final spot that string update needed" />
     <MESSAGE value="added Ids to front end filtering" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Ids to front end filtering" />
+    <MESSAGE value="changed hostUserId to lowercase" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed hostUserId to lowercase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
