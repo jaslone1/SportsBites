@@ -14,7 +14,7 @@ export interface EventDto {
   eventName: string;
   eventDate: string;
   hostName: string;
+  hostUserId: string;
   gameDetails: string;
   foodSuggestions: FoodSuggestionDto[];
-  HostUserId: string;
 }
