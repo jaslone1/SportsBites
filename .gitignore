@@ -1,0 +1,28 @@
+# Sensitive configuration files
+appsettings.Development.json
+appsettings.*.json
+.env
+.env.local
+.env.*.local
+
+# Build and dependency directories
+bin/
+obj/
+node_modules/
+dist/
+
+# IDE specific files
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
