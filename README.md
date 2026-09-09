@@ -377,9 +377,3 @@ Potential future enhancements:
 - **Created**: December 23, 2025
 - **Last Updated**: January 6, 2026
 - **Repository**: Public
-
----
-
-**SportsBites** - *Connecting sports fans worldwide, one game at a time!* ⚽🏀🏈⚾
-
-*Made with ❤️ by sports enthusiasts, for sports enthusiasts.*
