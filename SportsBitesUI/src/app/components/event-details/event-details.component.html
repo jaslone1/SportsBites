@@ -47,6 +47,22 @@
       <h4 class="mb-0">Food Suggestions</h4>
     </div>
 
+    <div class="card-body p-3 border-bottom" *ngIf="authService.isLoggedIn() && !event.isFinalized">
+      <div class="input-group">
+        <input 
+          [(ngModel)]="newFoodName" 
+          (keyup.enter)="suggestFood()"
+          class="form-control" 
+          placeholder="Suggest a food item...">
+        <button 
+          (click)="suggestFood()" 
+          [disabled]="!newFoodName.trim()"
+          class="btn btn-primary">
+          <i class="bi bi-plus-lg"></i> Add Food
+        </button>
+      </div>
+    </div>
+
     <div class="list-group list-group-flush">
       <div *ngFor="let food of event.foodSuggestions" class="list-group-item py-3">
 
