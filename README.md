@@ -4,7 +4,7 @@ A modern, full-stack sports fan community platform built with **Angular** and **
 
 ![Language Composition](https://img.shields.io/badge/C%23-30.7%25-blue) ![Language Composition](https://img.shields.io/badge/HTML-25.5%25-orange) ![Language Composition](https://img.shields.io/badge/CSS-23.3%25-pink) ![Language Composition](https://img.shields.io/badge/TypeScript-19.6%25-blue) ![Language Composition](https://img.shields.io/badge/Dockerfile-0.9%25-gray)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -77,7 +77,7 @@ Access the application at `http://localhost:8080`
 
 ---
 
-## 📋 Project Structure
+## Project Structure
 
 ```
 SportsBites/
@@ -108,7 +108,7 @@ SportsBites/
 
 ---
 
-## 🔑 Key Features
+## Key Features
 
 ### Authentication & Security
 - **JWT Bearer Authentication** - Secure token-based authentication
@@ -165,7 +165,7 @@ Update `appsettings.json` or set via environment variables:
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 Once the backend is running, access Swagger UI:
 
@@ -182,7 +182,7 @@ This provides interactive documentation for all API endpoints including:
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Backend Tests
 ```bash
@@ -204,7 +204,7 @@ npm run watch
 
 ---
 
-## 🐳 Docker Build Process
+## Docker Build Process
 
 The Dockerfile uses a **three-stage build** for optimal image size and performance:
 
@@ -226,7 +226,7 @@ The Dockerfile uses a **three-stage build** for optimal image size and performan
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Render.com (Recommended)
 
@@ -254,7 +254,7 @@ az container create \
 
 ---
 
-## 🔐 Security Considerations
+## Security Considerations
 
 - Never commit `.env` files to version control
 - Use strong JWT secrets in production (minimum 32 characters)
@@ -266,7 +266,7 @@ az container create \
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Cannot GET /" in browser
 - Ensure both frontend and backend are running
@@ -293,7 +293,7 @@ kill -9 <PID>
 
 ---
 
-## 📝 Development Guidelines
+## Development Guidelines
 
 ### Code Style
 - C# (.NET): Follow Microsoft C# Coding Conventions
@@ -327,7 +327,7 @@ chore: update dependencies
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 ### Backend Key Packages
 - `Microsoft.AspNetCore.Authentication.JwtBearer` - JWT authentication
@@ -345,7 +345,7 @@ chore: update dependencies
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -355,31 +355,7 @@ chore: update dependencies
 
 ---
 
-## 📄 License
-
-Not currently specified. See repository for license details.
-
----
-
-## 👤 Author
-
-**jaslone1** - Project Creator and Maintainer
-
-- GitHub: [@jaslone1](https://github.com/jaslone1)
-- Repository: [SportsBites](https://github.com/jaslone1/SportsBites)
-
----
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-1. Check existing [GitHub Issues](https://github.com/jaslone1/SportsBites/issues)
-2. Review [GitHub Discussions](https://github.com/jaslone1/SportsBites/discussions)
-3. Create a new issue if needed
-
----
-
-## 🗺️ Roadmap
+## Roadmap
 
 Potential future enhancements:
 - [ ] Real-time notifications (SignalR)
@@ -393,7 +369,7 @@ Potential future enhancements:
 
 ---
 
-## 📊 Project Stats
+## Project Stats
 
 - **Language**: C#, TypeScript, HTML, CSS
 - **Framework**: ASP.NET Core 8.0, Angular 21
