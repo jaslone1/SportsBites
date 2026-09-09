@@ -32,6 +32,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  fillDemoCredentials() {
+    this.loginData.email = 'testuser@sportsbites.local';
+    this.loginData.password = 'TestPassword123!';
+  }
+
   onLogin() {
     this.authService.login(this.loginData).subscribe({
       next: () => {
